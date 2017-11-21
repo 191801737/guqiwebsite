@@ -15,7 +15,20 @@ class ArticleView(View):
 
     def get(self, request):
         # 获取文章所有内容
-        articles = Article.objects.all()
+        all_articles = Article.objects.all()
+
+        # 对课程进行分页
+        try:
+            page = request.GET.get('page', 1)
+        except PageNotAnInteger:
+            page = 1
+
+        # Provide Paginator with the request object for complete querystring generation
+
+        p = Paginator(all_articles, 3, request=request)
+
+        articles = p.page(page)
+
         return render(request, 'blog-list.html', locals())
 
 
