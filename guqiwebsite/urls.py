@@ -20,8 +20,14 @@ import xadmin
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'^admin/', xadmin.site.urls),
-    url(r'^$|^index/$', users_views.index, name='index'),
-
+    url(r'^$|^index/$', users_views.index, name='index'),  #首页
+    url(r'^about/$', users_views.about, name='about'),  #关于我们
+    url(r'^news/$', users_views.news, name='news'),  #新闻
+    url(r'^products/$', users_views.products, name='products'),   #产品
+    url(r'^SuccessProducts/$', users_views.SuccessProducts, name='SuccessProducts'),   #案例
     # 课程机构url
     url(r'^blog/', include('blog.urls', namespace='blog'), ),
+
+    # 用户界面的url
+    url(r'^users/', include('users.urls', namespace='users'), ),
 ]
