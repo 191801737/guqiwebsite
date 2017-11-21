@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from apps.users import views as users_views
 import xadmin
-
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'^admin/', xadmin.site.urls),
+    url(r'^$|^index/$', users_views.index, name='index'),
 
     # 课程机构url
     url(r'^blog/', include('blog.urls', namespace='blog'), ),
