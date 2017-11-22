@@ -30,4 +30,5 @@ urlpatterns = [
 
     # 用户界面的url
     url(r'^users/', include('users.urls', namespace='users'), ),
+
 ]
