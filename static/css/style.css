@@ -116,7 +116,9 @@ section { overflow: hidden; }*/
 	font-size:0;
 	overflow:hidden;
 }
-
+.navbar-brand{
+    padding: 0 50px;
+}
 /*bacground color*/
 .lightbg {
     background-color: #f2f2f2;
@@ -1019,8 +1021,8 @@ Nav Menu style
 Home Section style
 ==================*/
 .home{
-    background: url(../images/background/header.jpg) no-repeat bottom center;
-    background-size: cover;
+    background: url(../images/2-3.jpg) no-repeat ;
+    background-size: 100%;
     position: relative;
 }
 .main_home{
