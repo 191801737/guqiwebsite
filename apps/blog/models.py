@@ -6,7 +6,7 @@ import datetime
 class Article(models.Model):
     title = models.CharField(max_length=256, verbose_name=u'标题')
     content = models.TextField(verbose_name=u'内容', null=True)
-    image = models.ImageField(upload_to='blog/%Y/%m', verbose_name=u'文章图片', max_length=100, null=True, blank=True)
+    image = models.ImageField(upload_to='blog/%Y/%m', verbose_name=u'文章图片', max_length=100, default='image/default.png')
     author = models.CharField(max_length=100, verbose_name=u'作者', default=u'管理员')
     pub_date = models.DateTimeField(default=datetime.datetime.now, verbose_name=u'发表时间')
     update_time = models.DateTimeField(default=datetime.datetime.now, verbose_name=u'更新时间')

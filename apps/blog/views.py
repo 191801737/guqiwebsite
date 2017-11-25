@@ -25,7 +25,7 @@ class ArticleView(View):
 
         # Provide Paginator with the request object for complete querystring generation
 
-        p = Paginator(all_articles, 3, request=request)
+        p = Paginator(all_articles, 8, request=request)
 
         articles = p.page(page)
 
@@ -40,3 +40,4 @@ class ArticleDetailView(View):
     def get(self, request, article_id):
         article = Article.objects.get(id=int(article_id))
         return render(request, 'blog-detail.html', locals())
+
