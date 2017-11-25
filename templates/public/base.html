@@ -8,7 +8,7 @@
         <title>古奇家具</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="/static/favicon.ico">
+        <link rel="icon" type="image/png" href="/static/images/favicon.ico">
         <!--Google Font link-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="/static/css/magnific-popup.css">
         <link rel="stylesheet" href="/static/css/bootsnav.css">
         <link rel="stylesheet" href="/static/css/selfstyle.css">
+
         {% block css %}
         {% endblock %}
         <!--For Plugins external css-->
@@ -80,36 +81,16 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <a class="navbar-brand" href="#brand">
-
                             <img src="/static/images/LOGO11.png" class="logo logo-display " alt="">
                             <img src="/static/images/22(1).png" class="logo logo-scrolled m-top-8" alt="">
-
                         </a>
                     </div>
                     <!-- End Header Navigation -->
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="navbar-menu">
-                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li><a href="/">首页</a></li>
-                            <li><a href="/users/about">公司简介</a></li>
-                            <li><a href="/users/products">产品展示</a></li>
-                            <li><a href="/users/news">最热新闻</a></li>
-                            <li><a href="/users/SuccessProducts">成功案例</a></li>
-                            <li class="dropdown">
-                            	<a class="dropdown-toggle" data-toggle="dropdown" href="#contact">联系我们</a>
-                        		<ul class="dropdown-menu cart-list">
-                                    <li>
-                                        <img src="/static/images/2.jpg"  style="width: 100%;height: 100%;" />
+                    {% block menu%}
+                    {% endblock %}
 
-                                    </li>
-                                    <li>
-                                        tel:13774354561
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
                 </div>
 
 
@@ -145,13 +126,13 @@
             <!--Home Sections-->
 
             <section id="hello" class="home bg-mega">
-{#                <div class="overlay"></div>#}
+                <div class="overlay"></div>
                 <div class="container">
                     <div class="row">
                         <div class="main_home">
-{#                            <div class="home_text">#}
-{#                                <h1 class="text-white">WE’RE <br /> CREATIVE DESIGNERS!</h1>#}
-{#                            </div>#}
+                            <div class="home_text">
+                                <h1 class="text-white">WE’RE <br /> CREATIVE DESIGNERS!</h1>
+                            </div>
 
                             <div class="home_btns m-top-40">
                                 <a href="https://bootstrapthemes.co" target="_blank" class="btn btn-primary m-top-20">在线预定</a>
