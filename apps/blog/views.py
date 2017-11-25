@@ -25,7 +25,7 @@ class ArticleView(View):
 
         # Provide Paginator with the request object for complete querystring generation
 
-        p = Paginator(all_articles, 3, request=request)
+        p = Paginator(all_articles, 8, request=request)
 
         articles = p.page(page)
 
