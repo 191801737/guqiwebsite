@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render, render_to_response, HttpResponse
+
+
 # Create your views here.
 
 
@@ -23,7 +25,6 @@ def SuccessProducts(request):
     return render_to_response('SuccessProducts.html', locals())
 
 
-
 def page_forbidden(request):
     # 全局403处理函数
     response = render(request, '403.html', locals())
@@ -43,4 +44,3 @@ def page_error(request):
     response = render(request, '500.html', locals())
     response.status_code = 500
     return response
-
