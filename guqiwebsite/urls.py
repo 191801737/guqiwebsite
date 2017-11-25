@@ -24,3 +24,8 @@ urlpatterns = [
     # 课程机构url
     url(r'^blog/', include('blog.urls', namespace='blog'), ),
 ]
+
+# 全局XXX页面配置
+handler403 = 'user.views.page_forbidden'
+handler404 = 'user.views.page_not_foud'
+handler500 = 'user.views.page_error'

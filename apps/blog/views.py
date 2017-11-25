@@ -40,3 +40,4 @@ class ArticleDetailView(View):
     def get(self, request, article_id):
         article = Article.objects.get(id=int(article_id))
         return render(request, 'blog-detail.html', locals())
+
