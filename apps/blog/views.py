@@ -29,7 +29,7 @@ class ArticleView(View):
 
         articles = p.page(page)
 
-        return render(request, 'blog-list.html', locals())
+        return render(request, 'news.html', locals())
 
 
 class ArticleDetailView(View):

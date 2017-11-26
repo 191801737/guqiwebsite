@@ -636,11 +636,13 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         height: auto !important;
     }
     
+
     /* Navbar Transparent
     =================================*/  
     nav.navbar.bootsnav.no-background{
-        background-color: transparent;
+        background-color: #fff;
         border: none;
+
     }
     
     nav.navbar.bootsnav.navbar-transparent .attr-nav{
@@ -672,7 +674,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
     nav.navbar.bootsnav.navbar-transparent.white .attr-nav > ul > li > a,
     nav.navbar.bootsnav.navbar-transparent.white ul.nav > li > a,
     nav.navbar.bootsnav.no-background.white ul.nav > li > a{
-        color: #fff;
+        color: #6f6f6f;
     }
     
     nav.navbar.bootsnav.navbar-transparent.dark .attr-nav > ul > li > a,
@@ -997,7 +999,10 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         float: none !important;
         margin: 0 !important;
     }
-    
+    .navbar{
+        height: 70px;
+    }
+
     nav.navbar.bootsnav .navbar-header {
         float: none;
         display: block;
@@ -1010,7 +1015,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         display: inline-block;
         float: left;
         margin-right: -200px;
-        margin-top: 10px;
+        margin-top: 18px;
     }
     
     nav.navbar.bootsnav .navbar-collapse {
