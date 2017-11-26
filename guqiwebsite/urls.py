@@ -45,6 +45,8 @@ urlpatterns = [
     # 产品界面的url
     url(r'^product/', include('products.urls', namespace='products'), ),
 
+    # 富文本相关url
+    url(r'^ueditor/', include('DjangoUeditor.urls')),
 ]
 
 # 全局XXX页面配置

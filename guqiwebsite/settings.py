@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'operation',
     'xadmin',
     'crispy_forms',
+    'DjangoUeditor',
 ]
 AUTH_USER_MODEL = "users.UserProfile"
 
