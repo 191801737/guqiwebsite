@@ -3,7 +3,7 @@
 
 import xadmin
 
-from .models import Article, Case
+from .models import Article, Case, Introduce
 
 
 class ArticleAdmin(object):
@@ -20,5 +20,12 @@ class CaseAdmin(object):
     style_fields = {"content": "ueditor"}
 
 
+class IntroduceAdmin(object):
+    list_display = ['title', 'pub_date', 'update_time']
+    list_filter = ['title', 'pub_date', 'update_time']
+    style_fields = {"content": "ueditor"}
+
+
 xadmin.site.register(Article, ArticleAdmin)
 xadmin.site.register(Case, CaseAdmin)
+xadmin.site.register(Introduce, IntroduceAdmin)

@@ -4,7 +4,7 @@
 from django.conf.urls import url
 
 
-from .views import ArticleView, ArticleDetailView
+from .views import ArticleView, ArticleDetailView ,IntroduceView
 
 
 urlpatterns = [
@@ -19,5 +19,9 @@ urlpatterns = [
 
     # 成功案例详情页
     url(r'^story_detail/(?P<article_id>\d+)/$', ArticleDetailView.as_view(), name='story_detail'),
+
+
+    # 关于我们
+    url(r'^introduce/$', IntroduceView.as_view(), name='Introduce'),
 
 ]

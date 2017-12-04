@@ -40,3 +40,18 @@ class Case(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Introduce(models.Model):
+    title = models.CharField(max_length=256, verbose_name='标题', null=True, blank=True)
+    content = UEditorField(verbose_name='内容', width=600, height=300, toolbars="full", imagePath="blog/ueditor",
+                           filePath="blog/ueditor", upload_settings={"imageMaxSize": 1204000}, default='')
+    pub_date = models.DateTimeField(default=datetime.datetime.now, verbose_name='发表时间')
+    update_time = models.DateTimeField(default=datetime.datetime.now, verbose_name='更新时间')
+
+    class Meta:
+        verbose_name = '关于我们'
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.title
