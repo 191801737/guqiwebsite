@@ -45,7 +45,7 @@ nav.navbar.bootsnav{
     -webkit-border-radius: 0px;
     -o-border-radius: 0px;
     border-radius: 0px;
-    background-color: #fff;
+    background-color: rgba(255,255,255,0.4);
     border: none;
     border-bottom: solid 1px #e0e0e0;
     z-index: 9;
@@ -53,7 +53,7 @@ nav.navbar.bootsnav{
 
 nav.navbar.bootsnav ul.nav > li > a{
     color: #6f6f6f;
-    background-color: transparent !important;
+    /*background-color: rgba(255,255,255,0.4);*/
 }
 
 nav.navbar.bootsnav ul.nav li.megamenu-fw > a:hover,
@@ -61,11 +61,11 @@ nav.navbar.bootsnav ul.nav li.megamenu-fw > a:focus,
 nav.navbar.bootsnav ul.nav li.active > a:hover,
 nav.navbar.bootsnav ul.nav li.active > a:focus,
 nav.navbar.bootsnav ul.nav li.active > a{
-    background-color: transparent;
+    background-color: rgba(255,255,255,0);
 }
 
 nav.navbar.bootsnav .navbar-toggle{
-    background-color: #fff !important;
+    background-color: rgba(255,255,255,0.4);
     border: none;
     padding: 0;
     font-size: 18px;
@@ -640,7 +640,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
     /* Navbar Transparent
     =================================*/  
     nav.navbar.bootsnav.no-background{
-        background-color: #fff;
+        background-color: rgba(255,255,255,0.4);
         border: none;
 
     }
@@ -674,7 +674,8 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
     nav.navbar.bootsnav.navbar-transparent.white .attr-nav > ul > li > a,
     nav.navbar.bootsnav.navbar-transparent.white ul.nav > li > a,
     nav.navbar.bootsnav.no-background.white ul.nav > li > a{
-        color: #6f6f6f;
+        color: #444;
+        font-weight: 600;
     }
     
     nav.navbar.bootsnav.navbar-transparent.dark .attr-nav > ul > li > a,
@@ -1024,8 +1025,8 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
     }
     
     nav.navbar.bootsnav.no-full .navbar-collapse{
-        max-height: 350px;
-        overflow-y: auto !important;
+        max-height: 370px;
+        overflow-y: hidden !important;
     }
     
     nav.navbar.bootsnav .navbar-collapse.collapse {
@@ -1063,7 +1064,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         display: block;
         width: 100%;
         border-bottom: solid 1px #e0e0e0;
-        padding: 10px 0;
+        padding: 10px 20px;
         border-top: solid 1px #e0e0e0;
         margin-bottom: -1px;
     }
@@ -1383,10 +1384,19 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         padding-left: 15px;
         padding-right: 15px;
     }
-    
+    nav.navbar.bootsnav ul.nav > li > a{
+    color: #6f6f6f;
+    background-color: rgba(255,255,255,1);
+}
+       nav.navbar.bootsnav ul.nav > li.active > a:hover,
+    nav.navbar.bootsnav ul.nav > li.active > a{
+    color: #6f6f6f;
+    background-color: rgba(255,255,255,1);
+}
     nav.navbar.bootsnav .navbar-nav {
         padding-left: 15px;
         padding-right: 15px;
+
     }
     
     .attr-nav{
@@ -1426,6 +1436,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         font-size: 18px !important;
         line-height: 24px !important;
         padding: 5px 10px !important;
+        background-color: rgba(255,255,255,.4);
     }
     
     /* Navbar Sidebar

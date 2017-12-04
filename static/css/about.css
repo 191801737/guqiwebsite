@@ -1,0 +1,12 @@
+.about-border{
+    border:1px solid #e5e5e5;
+    padding:30px 25px 15px 25px ;
+}
+.about-title{
+    margin: 10px 10px;
+}
+.about-title .title{
+    font-size: 24px;
+    font-weight: 100;
+    text-align: center;
+}

@@ -1,13 +1,14 @@
 {% extends "public/base.html" %}
 {% block css %}
+    <link rel="stylesheet" href="/static/css/about.css">
 {% endblock %}
 {% block menu%}
     <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
             <li><a href="/">首页</a></li>
             <li class="active"><a href="/users/about">关于我们</a></li>
-            <li><a href="/users/products">产品展示</a></li>
             <li><a href="/blog/list">新闻中心</a></li>
+            <li><a href="/users/products">产品展示</a></li>
             <li><a href="/users/SuccessProducts">成功案例</a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#contact">联系我们</a>
@@ -25,7 +26,7 @@
     </div><!-- /.navbar-collapse -->
 {% endblock %}
 {% block content %}
-    <section id="company" class="news roomy-100" style="font-family: '微软雅黑';">
+    <section  class="news roomy-100" style="font-family: '微软雅黑';">
         <div class="container">
             <div class="row">
                 <div class="main_news">
@@ -34,59 +35,99 @@
                             <p class="title">关于我们</p>
                             <div class="separator_left"></div>
                             <ul class="news-list ">
-                                <li class="news-item active"><i class="icofont icofont-plus-circle"></i><span class="">最热新闻</span></li>
-                                <li class="news-item "><i class="icofont icofont-plus-circle"></i><span class="">企业文化</span></li>
-                                <li class="news-item "><i class="icofont icofont-plus-circle"></i><span class="">经营理念</span></li>
-                                <li class="news-item "><i class="icofont icofont-plus-circle"></i><span class="">联系我们</span></li>
+                                <li class="news-item " id="li1"><i class="icofont icofont-plus-circle"></i><span class="">公司简介</span></li>
+                                <li class="news-item " id="li2"><i class="icofont icofont-plus-circle"></i><span class="">企业文化</span></li>
+                                <li class="news-item " id="li3"><i class="icofont icofont-plus-circle"></i><span class="">经营理念</span></li>
+                                <li class="news-item " id="li4"><i class="icofont icofont-plus-circle"></i><span class="">联系我们</span></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-9">
-                     <div class="news-border">
-                            <div class="news_content">
-                                <ul class="news-list">
-                                         {% for article in articles.object_list %}
-                                          <li class="news-item ">
-                                                <a href="{% url 'blog:article_detail' article.id %}"> {{ article.title }} </a>
-                                                <span style="float: right;display: inline-block">1111</span>
-                                          </li>
-                                    {% endfor %}
-                                </ul>
-                            <div class="pageturn">
-                                    <ul class="pagelist">
-                                        {% if articles.has_previous %}
-                                            <li class="long"><a
-                                                    href="?{{ articles.previous_page_number.querystring }}">上一页</a></li>
-                                        {% endif %}
-
-                                        {% for page in articles.pages %}
-                                            {% if page %}
-                                                {% ifequal page articles.number %}
-                                                    <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a></li>
-                                                {% else %}
-                                                    <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a></li>
-                                                {% endifequal %}
-                                            {% else %}
-                                                <li class="none"><a href="">...</a></li>
-                                            {% endif %}
-                                        {% endfor %}
-                                        {% if articles.has_next %}
-                                            <li class="long"><a href="?{{ articles.next_page_number.querystring }}">下一页</a>
-                                            </li>
-                                        {% endif %}
-                                    </ul>
+                         <div class="about-border" id="company">
+                                <div class="about-title">
+                                    <p class="title">公司简介</p>
                                 </div>
+                                <div class="about_content">
+
+                                </div>
+                        </div>
+                        <div class="about-border" id="cuture" style="display: none">
+                            <div class="about-title">
+                                <p class="title">企业文化</p>
+                            </div>
+                            <div class="about_content">
+
+                            </div>
+                        </div>
+                        <div class="about-border" id="idea" style="display: none">
+                            <div class="about-title">
+                                <p class="title">经营理念</p>
+                            </div>
+                            <div class="about_content">
+
+                            </div>
+                        </div>
+                        <div class="about-border" id="contact" style="display: none">
+                            <div class="about-title">
+                                <p class="title">联系我们</p>
+                            </div>
+                            <div class="about_content">
+
                             </div>
                         </div>
                     </div>
-
                 </div>
-            </div><!--End off row-->
-        </div><!--End off container -->
+            </div>
+        </div>
     </section>
 
 
 {% endblock %}
 
 {% block js %}
+    <script>
+    $("#li1").click(function () {
+        $("#company").show();
+        $("#cuture").hide();
+        $("#idea").hide();
+        $("#contact").hide();
+
+    });
+    $("#li2").click(function () {
+        $("#company").hide();
+        $("#cuture").show();
+        $("#idea").hide();
+        $("#contact").hide()
+    });
+    $("#li3").click(function () {
+        $("#company").hide();
+        $("#cuture").hide();
+        $("#idea").show();
+        $("#contact").hide()
+    });
+    $("#li4").click(function () {
+        $("#company").hide();
+        $("#cuture").hide();
+        $("#idea").hide();
+        $("#contact").show()
+    });
+    $(function () {
+        var oUl = document.getElementsByClassName("news-list")[0];
+        var oLi = oUl.getElementsByTagName("li");
+        var num = 0;
+        var oldLi =null;
+        //指定第一个li
+        oldLi=oLi[num];
+        oLi[num].className+=" active";
+        for(var i=0 ; i<oLi.length;i++){
+            oLi[i].index = i;
+            oLi[i].onclick = function(){
+                 oldLi.className ="news-item"; //清除上一个li的样式
+                 oldLi = this; //指定上一个li
+                 this.className +=" active";
+            }
+        }
+    })
+
+    </script>
 {% endblock %}

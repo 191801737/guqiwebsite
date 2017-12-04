@@ -1,0 +1,20 @@
+.border-i{
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 40px;
+    font-family: 微软雅黑;
+}
+.border-i:hover{
+    color:#4bcf99;
+}
+.prev{
+    left: 5%;
+}
+.next{
+    right: 5%;
+}

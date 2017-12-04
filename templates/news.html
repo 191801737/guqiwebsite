@@ -7,26 +7,15 @@
         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
             <li><a href="/">首页</a></li>
             <li><a href="/users/about">关于我们</a></li>
-            <li><a href="/users/products">产品展示</a></li>
             <li class="active"><a href="/blog/list">新闻中心</a></li>
+            <li><a href="/users/products">产品展示</a></li>
             <li><a href="/users/SuccessProducts">成功案例</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#contact">联系我们</a>
-                <ul class="dropdown-menu cart-list">
-                    <li>
-                        <img src="/static/images/2.jpg"  style="width: 100%;height: 100%;" />
-
-                    </li>
-                    <li>
-                        tel:13774354561
-                    </li>
-                </ul>
-            </li>
+           
         </ul>
     </div><!-- /.navbar-collapse -->
 {% endblock %}
 {% block content %}
-    <section id="news" class="news roomy-100" style="font-family: '微软雅黑';">
+    <section id="news" class="news roomy-40" style="font-family: '微软雅黑';">
         <div class="container">
             <div class="row">
                 <div class="main_news">
@@ -45,8 +34,11 @@
                                 <ul class="news-list">
                                          {% for article in articles.object_list %}
                                           <li class="news-item ">
-                                                <a href="{% url 'blog:article_detail' article.id %}"> {{ article.title }} </a>
-                                                <span style="float: right;display: inline-block">1111</span>
+                                                <a href="{% url 'blog:article_detail' article.id %}">
+                                                    <span style="float: left;display: inline-block">{{ article.title }}</span>
+                                                    <span style="float: right;display: inline-block">{{ article.pub_date }}</span>
+                                                </a>
+
                                           </li>
                                     {% endfor %}
                                 </ul>

@@ -32,7 +32,7 @@ body {
     margin-right: 0;
     font-weight: 400;
     width:100%;
-    font-family: 'Raleway', sans-serif;
+    font-family: '微软雅黑';
 }
 
 /*------------------------------------------------------------------*/
@@ -228,7 +228,7 @@ h4,
 h5,
 h6 {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: '微软雅黑', sans-serif;
     color:#1a1a1a;
     margin-bottom: 10px;
 }
@@ -1021,9 +1021,13 @@ Nav Menu style
 Home Section style
 ==================*/
 .home{
-    background: url(../images/2-3.jpg) no-repeat ;
-    background-size: 100%;
+
+    background-size: cover;
     position: relative;
+    /*min-height: 260px;*/
+}
+.home a img{
+    min-height:240px;
 }
 .main_home{
     overflow: hidden;
