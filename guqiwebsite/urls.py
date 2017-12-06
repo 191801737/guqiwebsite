@@ -22,21 +22,17 @@ from apps.users import views as users_views
 import xadmin
 
 from guqiwebsite.settings import MEDIA_ROOT
-
+from users.views import IndexView
 
 urlpatterns = [
-    # url(r'^admin/', admin.site.urls),
+    # 管理界面的url
     url(r'^admin/', xadmin.site.urls),
 
-    url(r'^$|^index/$', users_views.index, name='index'),  # 首页
-    url(r'^about/$', users_views.about, name='about'),  # 关于我们
-    url(r'^news/$', users_views.news, name='news'),  # 新闻
-    url(r'^products/$', users_views.products, name='products'),  # 产品
-    url(r'^SuccessProducts/$', users_views.SuccessProducts, name='SuccessProducts'),  # 案例
+    # 首页的URL
+    url(r'^$', IndexView.as_view(), name='index'),
 
     # 配置上传文件的访问处理函数
     url(r'^media/(?P<path>.*)/$', serve, {'document_root': MEDIA_ROOT}),
-
 
     # 课程机构url
     url(r'^blog/', include('blog.urls', namespace='blog'), ),
@@ -52,6 +48,6 @@ urlpatterns = [
 ]
 
 # 全局XXX页面配置
-handler403 = 'user.views.page_forbidden'
-handler404 = 'user.views.page_not_foud'
-handler500 = 'user.views.page_error'
+handler403 = 'users.views.page_forbidden'
+handler404 = 'users.views.page_not_foud'
+handler500 = 'users.views.page_error'
