@@ -15,38 +15,74 @@
     </div><!-- /.navbar-collapse -->
 {% endblock %}
 {% block content %}
-        <div class="featured_slider">
-                <div>
-                    <div class="featured_img">
-                        <img src="/static/images/fprojects/1.jpg" alt="" />
-                        <a href="/static/images/fprojects/1.jpg" class="popup-img"></a>
+     <section id="hello" class="home bg-mega" style="margin-top: 0px">
+                <div class="row">
+                    <div class="col-md-12">
+                      <a href="#">
+                        <img src="/static/images/guqi/2-5.jpg" style="width: 100%;height: 100%;" />
+                    </a>
                     </div>
                 </div>
-                <div>
-                    <div class="featured_img">
-                        <img src="/static/images/fprojects/2.jpg" alt="" />
-                        <a href="/static/images/fprojects/2.jpg" class="popup-img"></a>
+
+                <div class="">
+                    <div class="wp">
+                        <div class="fl">
+                            <div class="imgslide">
+                                <ul class="imgs">
+                                    {% for banner in all_banners %}
+                                        <li>
+                                            <a href="{{ banner.url }}">
+                                                <img width="1200" height="478" src="{{ MEDIA_URL }}{{ banner.image }}"/>
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="unslider-arrow prev"></div>
+                            <div class="unslider-arrow next"></div>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div class="featured_img">
-                        <img src="/static/images/fprojects/3.jpg" alt="" />
-                        <a href="/static/images/fprojects/3.jpg" class="popup-img"></a>
-                    </div>
-                </div>
-                <div>
-                    <div class="featured_img">
-                        <img src="/static/images/fprojects/4.jpg" alt="" />
-                        <a href="/static/images/fprojects/4.jpg" class="popup-img"></a>
-                    </div>
-                </div>
-                <div>
-                    <div class="featured_img">
-                        <img src="/static/images/fprojects/5.jpg" alt="" />
-                        <a href="/static/images/fprojects/5.jpg" class="popup-img"></a>
-                    </div>
-                </div>
-            </div>
+{#                <div class="container">#}
+{#                    <div class="row">#}
+{#                        <div class="main_home">#}
+{##}
+{#                        </div>#}
+{#                    </div><!--End off row-->#}
+{#                </div><!--End off container -->#}
+        </section>
+{#        <div class="featured_slider">#}
+{#                <div>#}
+{#                    <div class="featured_img">#}
+{#                        <img src="/static/images/fprojects/1.jpg" alt="" />#}
+{#                        <a href="/static/images/fprojects/1.jpg" class="popup-img"></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div>#}
+{#                    <div class="featured_img">#}
+{#                        <img src="/static/images/fprojects/2.jpg" alt="" />#}
+{#                        <a href="/static/images/fprojects/2.jpg" class="popup-img"></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div>#}
+{#                    <div class="featured_img">#}
+{#                        <img src="/static/images/fprojects/3.jpg" alt="" />#}
+{#                        <a href="/static/images/fprojects/3.jpg" class="popup-img"></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div>#}
+{#                    <div class="featured_img">#}
+{#                        <img src="/static/images/fprojects/4.jpg" alt="" />#}
+{#                        <a href="/static/images/fprojects/4.jpg" class="popup-img"></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div>#}
+{#                    <div class="featured_img">#}
+{#                        <img src="/static/images/fprojects/5.jpg" alt="" />#}
+{#                        <a href="/static/images/fprojects/5.jpg" class="popup-img"></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
 {% endblock %}
 
 {% block js %}

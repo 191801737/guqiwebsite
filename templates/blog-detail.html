@@ -1,16 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>article_page</title>
-</head>
-<body>
-<h1>{{ article.title }}</h1>
-<br/>
-{% autoescape off %}
-<h3>{{ article.content }}</h3>
-{% endautoescape %}
-<br/><br/>
+{% extends "public/base.html" %}
 
-</body>
-</html>
+{% block css %}
+<style>
+    .text-title{
+        height: 350px;
+        background-color: #e5e5e5;
+        text-align: center;
+        padding: 150px 0 0;
+    }
+    .text-content{
+        border: 1px solid #aaa;
+        margin: 15px auto;
+        padding:20px 0 10px;
+    }
+    .culmn{
+        background-color: #eee;
+    }
+</style>
+{% endblock %}
+{% block menu%}
+    <div class="collapse navbar-collapse" id="navbar-menu">
+        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+            <li><a href="/">首页</a></li>
+            <li><a href="/users/about">关于我们</a></li>
+            <li class="active"><a href="/blog/list">新闻中心</a></li>
+            <li><a href="/users/products">产品展示</a></li>
+            <li><a href="/users/SuccessProducts">成功案例</a></li>
+
+        </ul>
+    </div><!-- /.navbar-collapse -->
+{% endblock %}
+{% block content %}
+     <div class="text-title">
+            <h1 style="color:#333">{{ article.title }}</h1>
+            <p style="font-size: 12px">{{ article.pub_date }}</p>
+     </div>
+    <div class="container" style="margin: -40px auto 40px;background-color: #fff;text-align: center">
+        <div class="text-content" >
+
+            {% autoescape off %}
+                <div class="">
+                 <h3>{{ article.content }}
+                    {{ article.content }}
+                    {{ article.content }}
+                    {{ article.content }}{{ article.content }}
+
+                 </h3>
+                </div>
+            {% endautoescape %}
+            <br/><br/>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block js %}
+{% endblock %}

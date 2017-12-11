@@ -1,6 +1,13 @@
 {% extends "public/base.html" %}
 {% block css %}
     <link rel="stylesheet" href="/static/sucess_lunbotu/sucess_lunbo.css">
+    <style>
+    #pricing .productimage .pricing_item {
+        background: url("/static/images/guqi/4.jpg") no-repeat;
+        background-size: cover;
+            position: relative
+    }
+    </style>
 {% endblock %}
 
 {% block menu%}
@@ -9,13 +16,13 @@
             <li class="active"><a href="/">首页</a></li>
             <li><a href="/users/about">关于我们</a></li>
             <li><a href="/blog/list">新闻中心</a></li>
-            <li><a href="/users/products">产品展示</a></li>
+            <li class="side-menu"><a href="/users/products">产品展示</a></li>
             <li><a href="/users/SuccessProducts">成功案例</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
 {% endblock %}
 {% block content %}
-                    <section id="hello" class="home bg-mega" style="margin-top: 0px">
+            <section id="hello" class="home bg-mega" style="margin-top: 0px">
                 <div class="row">
                     <div class="col-md-12">
                       <a href="#">
@@ -137,8 +144,8 @@
 
             <!--Pricing Section-->
             <section id="pricing" class="pricing lightbg ">
-
-                <div class="">
+{#                <div class="overlay"></div>#}
+                <div class="productimage">
                     <div class="row">
                         <div class="main_pricing ">
 {#                            <div class="col-md-8 col-md-offset-2 col-sm-12">#}

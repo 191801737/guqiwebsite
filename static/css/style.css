@@ -121,7 +121,9 @@ section { overflow: hidden; }*/
 }
 /*bacground color*/
 .lightbg {
-    background-color: #f2f2f2;
+    /*background-color: #f2f2f2;*/
+    background: url("/static/images/guqi/3.jpg") no-repeat;
+    background-size: cover;
 }
 .bg-primary{background-color: #1E8BC3;}
 .bg-finence{background-color:#13A0B2;}

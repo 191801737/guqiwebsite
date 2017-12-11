@@ -10,3 +10,6 @@
     font-weight: 100;
     text-align: center;
 }
+.news .news-list li.news-item:hover{
+    cursor: pointer;
+}

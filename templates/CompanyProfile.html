@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="/static/css/about.css">
 {% endblock %}
 {% block menu%}
+
     <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
             <li><a href="/">首页</a></li>
@@ -26,6 +27,43 @@
     </div><!-- /.navbar-collapse -->
 {% endblock %}
 {% block content %}
+        <section id="hello" class="home bg-mega" style="margin-top: 0px">
+                <div class="row">
+                    <div class="col-md-12">
+                      <a href="#">
+                        <img src="/static/images/guqi/2-5.jpg" style="width: 100%;height: 100%;" />
+                    </a>
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="wp">
+                        <div class="fl">
+                            <div class="imgslide">
+                                <ul class="imgs">
+                                    {% for banner in all_banners %}
+                                        <li>
+                                            <a href="{{ banner.url }}">
+                                                <img width="1200" height="478" src="{{ MEDIA_URL }}{{ banner.image }}"/>
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="unslider-arrow prev"></div>
+                            <div class="unslider-arrow next"></div>
+                        </div>
+                    </div>
+                </div>
+{#                <div class="container">#}
+{#                    <div class="row">#}
+{#                        <div class="main_home">#}
+{##}
+{#                        </div>#}
+{#                    </div><!--End off row-->#}
+{#                </div><!--End off container -->#}
+        </section>
+
     <section  class="news roomy-100" style="font-family: '微软雅黑';">
         <div class="container">
             <div class="row">
@@ -47,8 +85,14 @@
                                 <div class="about-title">
                                     <p class="title">公司简介</p>
                                 </div>
-                                <div class="about_content">
+                                <div class="about_content" style="margin: 20px">
+                                    <p style="text-indent:2em;">
+                                        浩瀚宇宙，朗朗乾坤。中国，千年文明的古国，如今的我们意气纷发的成为了一名家居人，传承了多少古人的文明？曾经的文明产物，我们一直在追寻着，开创着！我们欣赏了海外的文明，也领略过海外的粗俗，见证了最有价值的中华文明宝贵遗产，从小我们就在华夏文明的诗歌中长大着，学习着古人的智慧，美德，在古人文明知识的熏陶下见证着我们成长，成才。
 
+                                    </p>
+                                    <p style="text-indent:2em;">
+                                         大江南北，有着绿树葱葱的森林，也有着荒芜人烟的沙漠，四季如花的江南，终年积雪的漠北，给了我们更多对大自然的认知与探索。传统的文明与现代文明相遇在一起的时候，我们学会了溶合！更多的时候可以说是学会了应用，传承了古人的文明精髓又发挥现代的文明。我们尊重文明，尊重科学，应用科学，溶合科学，将生活与居家结合在一起，开创了居家的新文明，居家的产品与当代的生活相互溶合，赋予了我们更有品位与文明的家具文明。我们为您呈现精致的、高贵的家具产品。
+                                    </p>
                                 </div>
                         </div>
                         <div class="about-border" id="cuture" style="display: none">
@@ -56,7 +100,7 @@
                                 <p class="title">企业文化</p>
                             </div>
                             <div class="about_content">
-
+                                做一个快乐的家居人，做一个信守承诺的家居人。
                             </div>
                         </div>
                         <div class="about-border" id="idea" style="display: none">
@@ -64,7 +108,7 @@
                                 <p class="title">经营理念</p>
                             </div>
                             <div class="about_content">
-
+                                传承文明   注重品质  不断创新  延续文明
                             </div>
                         </div>
                         <div class="about-border" id="contact" style="display: none">
