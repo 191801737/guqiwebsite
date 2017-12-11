@@ -17,7 +17,7 @@ class ProductListView(View):
 
         all_products = Product.objects.all()
 
-        return render(request, 'produce-list.html', locals())
+        return render(request, 'products.html', locals())
 
 
 class ProductStyleView(View):

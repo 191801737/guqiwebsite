@@ -3,8 +3,8 @@
 
 from django.conf.urls import url
 
+from .views import about, products, SuccessProducts
 
-from .views import about,products,SuccessProducts
 
 
 urlpatterns = [
