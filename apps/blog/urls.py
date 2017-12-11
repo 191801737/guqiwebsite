@@ -4,7 +4,7 @@
 from django.conf.urls import url
 
 
-from .views import ArticleView, ArticleDetailView ,IntroduceView
+from .views import ArticleView, ArticleDetailView, IntroduceView
 
 
 urlpatterns = [

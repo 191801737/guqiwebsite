@@ -1,12 +1,19 @@
 from django.shortcuts import render
 from django.shortcuts import render, render_to_response, HttpResponse
+from django.views.generic.base import View
 
 
 # Create your views here.
 
 
-def index(request):
-    return render_to_response('index.html', locals())
+# def index(request):
+#     return render_to_response('index.html', locals())
+
+class IndexView(View):
+    """guqiwebsite的首页"""
+
+    def get(self, request):
+        return render(request, 'index.html', locals())
 
 
 def about(request):
