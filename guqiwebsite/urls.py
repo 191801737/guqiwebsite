@@ -23,6 +23,7 @@ import xadmin
 
 from guqiwebsite.settings import MEDIA_ROOT
 from users.views import IndexView
+from products import views as product_views
 
 urlpatterns = [
     # 管理界面的url
@@ -45,6 +46,7 @@ urlpatterns = [
 
     # 富文本相关url
     url(r'^ueditor/', include('DjangoUeditor.urls')),
+    url(r'^productstyle/', product_views.productStyle, name='productStyle'),
 ]
 
 # 全局XXX页面配置

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import View
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
-
+from django.shortcuts import render, render_to_response, HttpResponse
 from .models import Product, Picture
 
 
@@ -29,4 +29,5 @@ class ProductStyleView(View):
 
         return render(request, "produce-style.html", locals())
 
-
+def productStyle(request):
+    return render_to_response('product-style.html', locals())
