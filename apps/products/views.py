@@ -40,3 +40,6 @@ def productList(request):
 
 def productDetail(request):
     return render_to_response('produce-detail.html', locals())
+
+def successProductDetail(request):
+    return render_to_response('SuccessProductsDetail.html', locals())
