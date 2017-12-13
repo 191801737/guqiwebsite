@@ -49,6 +49,7 @@ urlpatterns = [
     url(r'^productstyle/', product_views.productStyle, name='productStyle'),
     url(r'^productlist/', product_views.productList, name='productList'),
     url(r'^productdetail/', product_views.productDetail, name='productDetail'),
+    url(r'^successproductdetail/', product_views.successProductDetail, name='successProductDetail'),
 ]
 
 # 全局XXX页面配置
