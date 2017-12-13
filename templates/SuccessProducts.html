@@ -15,74 +15,26 @@
     </div><!-- /.navbar-collapse -->
 {% endblock %}
 {% block content %}
-     <section id="hello" class="home bg-mega" style="margin-top: 0px">
-                <div class="row">
+     <section id="hello" class="home bg-mega" style="margin-top: 0px;">
+                <div class="row" >
                     <div class="col-md-12">
                       <a href="#">
-                        <img src="/static/images/guqi/2-5.jpg" style="width: 100%;height: 100%;" />
+                        <img src="/static/images/guqi/2-5.jpg" width="100%" style="max-height: 500px" />
                     </a>
                     </div>
                 </div>
-
+     </section>
+    <div class="container" style="margin: -40px auto 40px;background-color: #fff;text-align: center">
+        <div class="text-content" >
                 <div class="">
-                    <div class="wp">
-                        <div class="fl">
-                            <div class="imgslide">
-                                <ul class="imgs">
-                                    {% for banner in all_banners %}
-                                        <li>
-                                            <a href="{{ banner.url }}">
-                                                <img width="1200" height="478" src="{{ MEDIA_URL }}{{ banner.image }}"/>
-                                            </a>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                            <div class="unslider-arrow prev"></div>
-                            <div class="unslider-arrow next"></div>
-                        </div>
-                    </div>
+                 <h3>
+                    12312312312
+
+                 </h3>
                 </div>
-{#                <div class="container">#}
-{#                    <div class="row">#}
-{#                        <div class="main_home">#}
-{##}
-{#                        </div>#}
-{#                    </div><!--End off row-->#}
-{#                </div><!--End off container -->#}
-        </section>
-{#        <div class="featured_slider">#}
-{#                <div>#}
-{#                    <div class="featured_img">#}
-{#                        <img src="/static/images/fprojects/1.jpg" alt="" />#}
-{#                        <a href="/static/images/fprojects/1.jpg" class="popup-img"></a>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div>#}
-{#                    <div class="featured_img">#}
-{#                        <img src="/static/images/fprojects/2.jpg" alt="" />#}
-{#                        <a href="/static/images/fprojects/2.jpg" class="popup-img"></a>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div>#}
-{#                    <div class="featured_img">#}
-{#                        <img src="/static/images/fprojects/3.jpg" alt="" />#}
-{#                        <a href="/static/images/fprojects/3.jpg" class="popup-img"></a>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div>#}
-{#                    <div class="featured_img">#}
-{#                        <img src="/static/images/fprojects/4.jpg" alt="" />#}
-{#                        <a href="/static/images/fprojects/4.jpg" class="popup-img"></a>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div>#}
-{#                    <div class="featured_img">#}
-{#                        <img src="/static/images/fprojects/5.jpg" alt="" />#}
-{#                        <a href="/static/images/fprojects/5.jpg" class="popup-img"></a>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
+            <br/><br/>
+        </div>
+    </div>
 {% endblock %}
 
 {% block js %}
