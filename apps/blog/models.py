@@ -26,6 +26,7 @@ class Article(models.Model):
 
 class Case(models.Model):
     title = models.CharField(max_length=256, verbose_name='标题')
+    desc = models.CharField(max_length=256, verbose_name='描述', default="")
     content = UEditorField(verbose_name='内容', width=600, height=300, toolbars="full", imagePath="blog/ueditor",
                            filePath="blog/ueditor", upload_settings={"imageMaxSize": 1204000}, default='')
     image = models.ImageField(upload_to='blog/%Y/%m', verbose_name='封面图', max_length=100, default='image/default.png',

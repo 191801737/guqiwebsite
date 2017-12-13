@@ -10,7 +10,7 @@
             <li><a href="{% url 'blog:Introduce' %}">关于我们</a></li>
             <li><a href="/blog/list">新闻中心</a></li>
             <li class="active"><a href="{% url 'products:product_list' %}">产品展示</a></li>
-            <li><a href="/users/SuccessProducts">成功案例</a></li>
+            <li><a href="{% url 'blog:story_list' %}">成功案例</a></li>
 
         </ul>
     </div><!-- /.navbar-collapse -->
@@ -30,15 +30,31 @@
                     <div class="portfolio_content m-top-20">
                         <div class="col-md-12">
                             <div class="row">
-                                {% for products in all_products %}
-                                    <div class="col-md-4"  style="padding:0;border: 1px solid #eee">
+{#                                {% for products in all_products %}#}
+{#                                    <div class="col-md-4"  style="padding:0;border: 1px solid #eee">#}
+{#                                        <div class="portfolio_item portfolio_item2">#}
+{#                                            <img  src="{{ MEDIA_URL }}{{ products.image }}" alt=""/>#}
+{#                                            <div class="portfolio_hover text-center">#}
+{#                                                <h6 class="text-uppercase text-white">{{ products.name }}</h6>#}
+{#                                                <p class=" text-white">{{ products.desc }}</p>#}
+{#                                                <div class="portfolio_hover_icon">#}
+{#                                                   <a href="/productstyle" ><i class="fa fa-hand-pointer-o"></i></a>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                {% endfor %}#}
+                                {% for case in cases.object_list %}
+                                    <div class="col-md-6 " style="padding:0;border: 1px solid #eee">
                                         <div class="portfolio_item portfolio_item2">
-                                            <img  src="{{ MEDIA_URL }}{{ products.image }}" alt=""/>
+                                            <img src="{{ MEDIA_URL }}{{ case.image }}" alt=""/>
                                             <div class="portfolio_hover text-center">
-                                                <h6 class="text-uppercase text-white">{{ products.name }}</h6>
-                                                <p class=" text-white">{{ products.desc }}</p>
+                                                <h6 class="text-uppercase text-white">{{ case.title }}</h6>
+                                                <p class=" text-white">{{ case.desc }}</p>
                                                 <div class="portfolio_hover_icon">
-                                                   <a href="/productstyle" ><i class="fa fa-hand-pointer-o"></i></a>
+                                                    <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i
+                                                            class="fa fa-expand"></i></a>
+                                                    <a href=""><i class="fa fa-search"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -96,6 +112,48 @@
                                         </div>
                                     </div>
                                 </div>
+=======
+{#                                 <div class="col-md-6 "  style="padding:0;border: 1px solid #eee">#}
+{#                                    <div class="portfolio_item portfolio_item2">#}
+{#                                        <img src="/static/images/Portfolio/5.jpg" alt="" />#}
+{#                                        <div class="portfolio_hover text-center">#}
+{#                                            <h6 class="text-uppercase text-white">Title</h6>#}
+{#                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>#}
+{#                                            <div class="portfolio_hover_icon">#}
+{#                                                <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>#}
+{#                                                <a href=""><i class="fa fa-search"></i></a>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            <div class="col-md-6 "  style="padding:0;border: 1px solid #eee">#}
+{#                                    <div class="portfolio_item portfolio_item2">#}
+{#                                        <img src="/static/images/Portfolio/5.jpg" alt="" />#}
+{#                                        <div class="portfolio_hover text-center">#}
+{#                                            <h6 class="text-uppercase text-white">Title</h6>#}
+{#                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>#}
+{#                                            <div class="portfolio_hover_icon">#}
+{#                                                <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>#}
+{#                                                <a href=""><i class="fa fa-search"></i></a>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="col-md-6 " style="padding:0;border: 1px solid #eee">#}
+{#                                    <div class="portfolio_item portfolio_item2">#}
+{#                                        <img src="/static/images/Portfolio/5.jpg" alt=""/>#}
+{#                                        <div class="portfolio_hover text-center">#}
+{#                                            <h6 class="text-uppercase text-white">Title</h6>#}
+{#                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>#}
+{#                                            <div class="portfolio_hover_icon">#}
+{#                                                <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i#}
+{#                                                        class="fa fa-expand"></i></a>#}
+{#                                                <a href=""><i class="fa fa-search"></i></a>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+>>>>>>> bffa0d1ca8b1b0bca16f76e0033577e52e753c8b
                             </div>
                         </div>
 

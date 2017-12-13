@@ -63,7 +63,7 @@ class CaseView(View):
 
         cases = p.page(page)
 
-        return render(request, 'case_list.html', locals())
+        return render(request, 'SuccessProducts.html', locals())
 
 
 class CaseDetailView(View):
