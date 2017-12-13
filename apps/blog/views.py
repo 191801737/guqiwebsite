@@ -81,4 +81,4 @@ class IntroduceView(View):
 
     def get(self, request):
         introduces = Introduce.objects.all()
-        return render(request, 'introduce.html', locals())
+        return render(request, 'CompanyProfile.html', locals())

@@ -14,9 +14,9 @@
     <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
             <li class="active"><a href="/">首页</a></li>
-            <li><a href="/users/about">关于我们</a></li>
+            <li><a href="{% url 'blog:Introduce' %}">关于我们</a></li>
             <li><a href="/blog/list">新闻中心</a></li>
-            <li class="side-menu"><a href="/users/products">产品展示</a></li>
+            <li class="side-menu"><a href="{% url 'products:product_list' %}">产品展示</a></li>
             <li><a href="/users/SuccessProducts">成功案例</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->

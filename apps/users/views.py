@@ -16,8 +16,8 @@ class IndexView(View):
         return render(request, 'index.html', locals())
 
 
-def about(request):
-    return render_to_response('CompanyProfile.html', locals())
+# def about(request):
+#     return render_to_response('CompanyProfile.html', locals())
 
 
 def news(request):

@@ -23,7 +23,7 @@ class CaseAdmin(object):
 class IntroduceAdmin(object):
     list_display = ['title', 'pub_date', 'update_time']
     list_filter = ['title', 'pub_date', 'update_time']
-    style_fields = {"content": "ueditor"}
+    style_fields = {"content": "ueditor", "culture": "ueditor", "idea": "ueditor", "contact": "ueditor"}
 
 
 xadmin.site.register(Article, ArticleAdmin)
