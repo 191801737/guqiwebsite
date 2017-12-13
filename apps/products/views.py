@@ -31,3 +31,9 @@ class ProductStyleView(View):
 
 def productStyle(request):
     return render_to_response('product-style.html', locals())
+
+def productList(request):
+    return render_to_response('product-list.html', locals())
+
+def productDetail(request):
+    return render_to_response('produce-detail.html', locals())

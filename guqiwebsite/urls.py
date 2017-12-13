@@ -47,6 +47,8 @@ urlpatterns = [
     # 富文本相关url
     url(r'^ueditor/', include('DjangoUeditor.urls')),
     url(r'^productstyle/', product_views.productStyle, name='productStyle'),
+    url(r'^productlist/', product_views.productList, name='productList'),
+    url(r'^productdetail/', product_views.productDetail, name='productDetail'),
 ]
 
 # 全局XXX页面配置
