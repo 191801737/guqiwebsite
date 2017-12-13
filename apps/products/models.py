@@ -10,7 +10,7 @@ class Product(models.Model):
     desc = models.CharField(max_length=300, verbose_name=u'产品描述')
     detail = models.TextField(verbose_name=u'产品详情')
     image = models.ImageField(upload_to='product/%Y/%m', verbose_name=u'封面图片', max_length=100,
-                              default='image/default.png')
+                              default='image/default.png', null=True, blank=True)
     tag = models.CharField(default="", max_length=10, verbose_name="产品标签", null=True, blank=True)
     add_time = models.DateTimeField(default=datetime.datetime.now, verbose_name=u'添加时间')
 
