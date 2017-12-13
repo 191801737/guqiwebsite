@@ -9,32 +9,106 @@
             <li><a href="/">首页</a></li>
             <li><a href="{% url 'blog:Introduce' %}">关于我们</a></li>
             <li><a href="/blog/list">新闻中心</a></li>
-            <li><a href="{% url 'products:product_list' %}">产品展示</a></li>
-            <li class="active"><a href="/users/SuccessProducts">成功案例</a></li>
+            <li class="active"><a href="{% url 'products:product_list' %}">产品展示</a></li>
+            <li><a href="/users/SuccessProducts">成功案例</a></li>
+
         </ul>
     </div><!-- /.navbar-collapse -->
 {% endblock %}
 {% block content %}
-     <section id="hello" class="home bg-mega" style="margin-top: 0px;">
-                <div class="row" >
-                    <div class="col-md-12">
-                      <a href="#">
-                        <img src="/static/images/guqi/2-5.jpg" width="100%" style="max-height: 500px" />
-                    </a>
-                    </div>
-                </div>
-     </section>
-    <div class="container" style="margin: -40px auto 40px;background-color: #fff;text-align: center">
-        <div class="text-content" >
-                <div class="">
-                 <h3>
-                    12312312312
+        <section id="portfolio" class="portfolio lightbg">
+        <div class="container">
+            <div class="row">
+                <div class="main_portfolio roomy-100">
+{#                    <div class="col-md-8 col-md-offset-2">#}
+{#                        <div class="head_title text-center">#}
+{#                            <h2 style="color:#fff">精品分类</h2>#}
+{#                            <div class="separator_auto" ></div>#}
+{#                            <p style="color:#fff"> 传承文明 注重品质 不断创新 延续文明</p>#}
+{#                        </div>#}
+{#                    </div>#}
+                    <div class="portfolio_content m-top-20">
+                        <div class="col-md-12">
+                            <div class="row">
+                                {% for products in all_products %}
+                                    <div class="col-md-4"  style="padding:0;border: 1px solid #eee">
+                                        <div class="portfolio_item portfolio_item2">
+                                            <img  src="{{ MEDIA_URL }}{{ products.image }}" alt=""/>
+                                            <div class="portfolio_hover text-center">
+                                                <h6 class="text-uppercase text-white">{{ products.name }}</h6>
+                                                <p class=" text-white">{{ products.desc }}</p>
+                                                <div class="portfolio_hover_icon">
+                                                   <a href="/productstyle" ><i class="fa fa-hand-pointer-o"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                 <div class="col-md-6 "  style="padding:0;border: 1px solid #eee">
+                                    <div class="portfolio_item portfolio_item2">
+                                        <img src="/static/images/Portfolio/5.jpg" alt="" />
+                                        <div class="portfolio_hover text-center">
+                                            <h6 class="text-uppercase text-white">Title</h6>
+                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>
+                                            <div class="portfolio_hover_icon">
+                                                <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
+                                                <a href=""><i class="fa fa-search"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="col-md-6 "  style="padding:0;border: 1px solid #eee">
+                                    <div class="portfolio_item portfolio_item2">
+                                        <img src="/static/images/Portfolio/5.jpg" alt="" />
+                                        <div class="portfolio_hover text-center">
+                                            <h6 class="text-uppercase text-white">Title</h6>
+                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>
+                                            <div class="portfolio_hover_icon">
+                                                <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
+                                                <a href=""><i class="fa fa-search"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="col-md-6 "  style="padding:0;border: 1px solid #eee">
+                                    <div class="portfolio_item portfolio_item2">
+                                        <img src="/static/images/Portfolio/5.jpg" alt="" />
+                                        <div class="portfolio_hover text-center">
+                                            <h6 class="text-uppercase text-white">Title</h6>
+                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>
+                                            <div class="portfolio_hover_icon">
+                                                <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
+                                                <a href=""><i class="fa fa-search"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="col-md-6 "  style="padding:0;border: 1px solid #eee">
+                                    <div class="portfolio_item portfolio_item2">
+                                        <img src="/static/images/Portfolio/5.jpg" alt="" />
+                                        <div class="portfolio_hover text-center">
+                                            <h6 class="text-uppercase text-white">Title</h6>
+                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>
+                                            <div class="portfolio_hover_icon">
+                                                <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
+                                                <a href=""><i class="fa fa-search"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                 </h3>
+
+                    </div>
+
                 </div>
-            <br/><br/>
-        </div>
-    </div>
+            </div><!--End off row -->
+            <div style="position: absolute;top: 50%;left:3%;margin-top: -30px" id="productLeft"><img src="/static/lunbotu/image/prev.png" alt="previous"></div>
+            <div style="position: absolute;top:50%;right:3%;margin-top: -30px" id="productRight"><img src="/static/lunbotu/image/next.png" alt="next"></div>
+        </div><!--End off container -->
+    </section>
+
 {% endblock %}
 
 {% block js %}
