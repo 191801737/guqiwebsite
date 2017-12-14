@@ -3,7 +3,19 @@
 
 import xadmin
 
-from .models import Article, Case, Introduce
+from .models import Article, Case, Introduce, IntroduceBanner, NewsBanner
+
+
+class IntroduceBannerAdmin(object):
+    list_display = ['image', 'url', 'add_time']
+    list_filter = ['image', 'url', 'add_time']
+    search_fields = ['image', 'url']
+
+
+class NewsBannerAdmin(object):
+    list_display = ['image', 'url', 'add_time']
+    list_filter = ['image', 'url', 'add_time']
+    search_fields = ['image', 'url']
 
 
 class ArticleAdmin(object):
@@ -26,6 +38,8 @@ class IntroduceAdmin(object):
     style_fields = {"content": "ueditor", "culture": "ueditor", "idea": "ueditor", "contact": "ueditor"}
 
 
+xadmin.site.register(IntroduceBanner, IntroduceBannerAdmin)
+xadmin.site.register(NewsBanner, NewsBannerAdmin)
 xadmin.site.register(Article, ArticleAdmin)
 xadmin.site.register(Case, CaseAdmin)
 xadmin.site.register(Introduce, IntroduceAdmin)

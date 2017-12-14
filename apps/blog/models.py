@@ -6,6 +6,48 @@ from DjangoUeditor.models import UEditorField
 # Create your models here.
 
 
+class IntroduceBanner(models.Model):
+    """关于我们的背景图"""
+    image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name='关于我们背景')
+    url = models.URLField(max_length=200, verbose_name='访问地址')
+    add_time = models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')
+
+    class Meta:
+        verbose_name = "关于我们背景"
+        verbose_name_plural = verbose_name
+
+    def save(self, *args, **kwargs):
+        # delete old file when replacing by updating the file
+        try:
+            this = IntroduceBanner.objects.get(id=self.id)
+            if this.image != self.image:
+                this.image.delete(save=False)
+        except:
+            pass  # when new photo then we do nothing, normal case
+        super(IntroduceBanner, self).save(*args, **kwargs)
+
+
+class NewsBanner(models.Model):
+    """成功案例的背景图"""
+    image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name='成功案例背景图')
+    url = models.URLField(max_length=200, verbose_name='访问地址')
+    add_time = models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')
+
+    class Meta:
+        verbose_name = "成功案例背景图"
+        verbose_name_plural = verbose_name
+
+    def save(self, *args, **kwargs):
+        # delete old file when replacing by updating the file
+        try:
+            this = NewsBanner.objects.get(id=self.id)
+            if this.image != self.image:
+                this.image.delete(save=False)
+        except:
+            pass  # when new photo then we do nothing, normal case
+        super(NewsBanner, self).save(*args, **kwargs)
+
+
 class Article(models.Model):
     title = models.CharField(max_length=256, verbose_name='标题')
     content = UEditorField(verbose_name='内容', width=600, height=300, toolbars="full", imagePath="blog/ueditors/",

@@ -16,13 +16,16 @@
 {% endblock %}
 {% block content %}
 <section id="hello" class="home bg-mega" style="margin-top: 0px;">
-                <div class="row" >
-                    <div class="col-md-12">
-                      <a href="#">
-                        <img src="/static/images/guqi/2-5.jpg" width="100%" style="max-height: 500px" />
-                    </a>
-                    </div>
-                </div>
+    <div class="row">
+        {% for introducebanner in introducebanners %}
+            <div class="col-md-12">
+                <a href="#">
+                    <img src="{{ MEDIA_URL }}{{ introducebanner.image }}" width="100%" style="max-height: 500px"/>
+                </a>
+            </div>
+        {% endfor %}
+
+    </div>
         </section>
     <section  class="news roomy-100" style="font-family: '微软雅黑';">
         <div class="container">

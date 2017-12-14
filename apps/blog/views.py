@@ -5,7 +5,7 @@ from django.views.generic import View
 # Create your views here.
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 
-from .models import Article, Case, Introduce
+from .models import Article, Case, Introduce, IntroduceBanner, NewsBanner
 
 
 class ArticleView(View):
@@ -14,6 +14,10 @@ class ArticleView(View):
     """
 
     def get(self, request):
+
+        # 获取新闻中心的背景图
+        newsbanners = NewsBanner.objects.all()[:1]
+
         # 获取新闻所有内容
         all_articles = Article.objects.all()
 
@@ -80,5 +84,11 @@ class IntroduceView(View):
     """关于我们"""
 
     def get(self, request):
+
+        # 关于我们的背景图
+        introducebanners = IntroduceBanner.objects.all()[:1]
+
+        # 关于我们的内容
         introduces = Introduce.objects.all()
+
         return render(request, 'CompanyProfile.html', locals())
