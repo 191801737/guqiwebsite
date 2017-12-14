@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.views.static import serve
 
 
-from apps.users import views as users_views
+# from apps.users import views as users_views
 import xadmin
 
 from guqiwebsite.settings import MEDIA_ROOT

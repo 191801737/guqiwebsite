@@ -24,11 +24,13 @@
 {% block content %}
             <section id="hello" class="home bg-mega" style="margin-top: 0px">
                 <div class="row">
+                    {% for indexbanner in indexbanners %}
                     <div class="col-md-12">
-                      <a href="#">
-                        <img src="/static/images/background/A618%23套房.jpg" style="width: 100%;height: 100%;" />
-                    </a>
+                            <a href="#">
+                                <img src="{{ MEDIA_URL }}{{ indexbanner.image }}" style="width: 100%;height: 100%;" />
+                            </a>
                     </div>
+                    {% endfor %}
                 </div>
 
                 <div class="">
@@ -36,13 +38,13 @@
                         <div class="fl">
                             <div class="imgslide">
                                 <ul class="imgs">
-                                    {% for banner in all_banners %}
-                                        <li>
-                                            <a href="{{ banner.url }}">
-                                                <img width="1200" height="478" src="{{ MEDIA_URL }}{{ banner.image }}"/>
-                                            </a>
-                                        </li>
-                                    {% endfor %}
+{#                                    {% for banner in all_banners %}#}
+{#                                        <li>#}
+{#                                            <a href="{{ banner.url }}">#}
+{#                                                <img width="1200" height="478" src="{{ MEDIA_URL }}{{ banner.image }}"/>#}
+{#                                            </a>#}
+{#                                        </li>#}
+{#                                    {% endfor %}#}
                                 </ul>
                             </div>
                             <div class="unslider-arrow prev"></div>
@@ -164,12 +166,13 @@
                                         <h3 class="text-uppercase">产品展示</h3>
                                     </div>
                                     <div class="pricing_body bg-white ">
+
+
                                         <div id="slider" style="margin: 5% 5% ">
                                             <ul class="slides ">
-                                                <li><img class="responsive" src="/static/images/guqi/4.JPG"></li>
-                                                <li><img class="responsive" src="/static/images/guqi/5.JPG"></li>
-                                                <li><img class="responsive" src="/static/images/guqi/6.JPG"></li>
-                                                <li><img class="responsive" src="/static/images/guqi/7.JPG"></li>
+                                                {% for productbanner in productbanners %}
+                                                <li><img class="responsive" src="{{ MEDIA_URL }}{{ productbanner.image }}"></li>
+                                                {% endfor %}
                                             </ul>
                                             <ul class="controls" >
                                                 <li style="position: absolute;top: 50%;left:5%;margin-top: -30px" id="leftbtn"><img src="/static/lunbotu/image/prev.png" alt="previous"></li>
@@ -182,6 +185,7 @@
 {#                                                <li></li>#}
 {#                                            </ul>#}
                                         </div>
+
                                     </div>
                                 </div>
                             </div><!-- End off col-md-4 -->
@@ -194,10 +198,9 @@
                                     <div class="pricing_body bg-white ">
                                         <div id="slide" class="slide"  class="index-slide" alt="star">
                                             <!-- 轮播图片数量可自行增减 -->
-                                            <div class="img"><img src="/static/images/guqi/1.jpg"/></div>
-                                            <div class="img"><img src="/static/images/guqi/2.jpg"/></div>
-                                            <div class="img"><img src="/static/images/guqi/3.jpg"/></div>
-
+                                            {% for casebanner in casebanners %}
+                                                <div class="img"><img src="{{ MEDIA_URL }}{{ casebanner.image }}"/></div>
+                                            {% endfor %}
                                             <div class="slide-bt"></div>
                                         </div>
                                     </div>

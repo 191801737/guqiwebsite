@@ -5,7 +5,7 @@
 import xadmin
 from xadmin import views
 
-from .models import Banner
+from .models import IndexBanner, ProductBanner, CaseBanner
 
 
 # 设置主题
@@ -15,17 +15,31 @@ class BaseSetting(object):
 
 
 class GlobalSettings(object):
-    site_title = u'后台管理系统'
-    site_footer = u'后台管理系统'
+    site_title = '后台管理系统'
+    site_footer = '后台管理系统'
     menu_style = 'accordion'
 
 
-class BannerAdmin(object):
+class IndexBannerAdmin(object):
+    list_display = ['image', 'url', 'add_time']
+    list_filter = ['image', 'url', 'add_time']
+    search_fields = ['image', 'url']
+
+
+class ProductBannerAdmin(object):
     list_display = ['title', 'image', 'url', 'index', 'add_time']
     list_filter = ['title', 'image', 'url', 'index', 'add_time']
     search_fields = ['title', 'image', 'url', 'index']
 
 
-xadmin.site.register(Banner, BannerAdmin)
+class CaseBannerAdmin(object):
+    list_display = ['title', 'image', 'url', 'index', 'add_time']
+    list_filter = ['title', 'image', 'url', 'index', 'add_time']
+    search_fields = ['title', 'image', 'url', 'index']
+
+
+xadmin.site.register(IndexBanner, IndexBannerAdmin)
+xadmin.site.register(ProductBanner, ProductBannerAdmin)
+xadmin.site.register(CaseBanner, CaseBannerAdmin)
 xadmin.site.register(views.BaseAdminView, BaseSetting)
 xadmin.site.register(views.CommAdminView, GlobalSettings)

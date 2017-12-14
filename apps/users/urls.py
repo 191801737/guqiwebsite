@@ -5,7 +5,7 @@ from django.conf.urls import url
 
 from .views import  products, SuccessProducts
 
-
+from .views import IndexView
 
 urlpatterns = [
     # 文章列表

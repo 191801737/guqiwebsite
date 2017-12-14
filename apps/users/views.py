@@ -1,23 +1,24 @@
 from django.shortcuts import render
 from django.shortcuts import render, render_to_response, HttpResponse
 from django.views.generic.base import View
+from .models import IndexBanner, ProductBanner, CaseBanner
 
-from django.http import JsonResponse
+
 # Create your views here.
-
-
-# def index(request):
-#     return render_to_response('index.html', locals())
 
 class IndexView(View):
     """guqiwebsite的首页"""
 
     def get(self, request):
+        # 首页背景图
+        indexbanners = IndexBanner.objects.all()[:1]
+
+        # 产品轮播图
+        productbanners = ProductBanner.objects.all()[:3]
+
+        # 成功案例轮播图
+        casebanners = CaseBanner.objects.all()[:3]
         return render(request, 'index.html', locals())
-
-
-# def about(request):
-#     return render_to_response('CompanyProfile.html', locals())
 
 
 def news(request):
