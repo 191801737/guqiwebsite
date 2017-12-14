@@ -9,8 +9,8 @@
             <li><a href="/">首页</a></li>
             <li><a href="{% url 'blog:Introduce' %}">关于我们</a></li>
             <li><a href="/blog/list">新闻中心</a></li>
-            <li class="active"><a href="{% url 'products:product_list' %}">产品展示</a></li>
-            <li><a href="{% url 'blog:story_list' %}">成功案例</a></li>
+            <li ><a href="{% url 'products:product_list' %}">产品展示</a></li>
+            <li class="active"><a href="{% url 'blog:story_list' %}">成功案例</a></li>
 
         </ul>
     </div><!-- /.navbar-collapse -->
@@ -27,7 +27,7 @@
                                     <div class="col-md-6 " style="padding:0;border: 1px solid #eee">
                                         <div class="portfolio_item portfolio_item2">
                                             <img src="{{ MEDIA_URL }}{{ case.image }}" alt=""/>
-                                            <div class="portfolio_hover text-center">
+                                            <div class="portfolio_text">
                                                 <h6 class="text-uppercase text-white">{{ case.title }}</h6>
                                                 <p class=" text-white">{{ case.desc }}</p>
                                                 <div class="portfolio_hover_icon">
