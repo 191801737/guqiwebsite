@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render, render_to_response, HttpResponse
 from django.views.generic.base import View
 
-
+from django.http import JsonResponse
 # Create your views here.
 
 

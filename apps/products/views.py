@@ -27,7 +27,15 @@ class ProductStyleView(View):
     def get(self, request, product_id):
         product = Product.objects.get(id=int(product_id))
 
-        return render(request, "produce-style.html", locals())
+        return render(request, "product-style.html", locals())
+
+#
+# class ProductDetailView(View):
+#     """产品详情页"""
+#
+#     def get(self, request, product_id):
+#         pictures =
+
 
 
 def productStyle(request):

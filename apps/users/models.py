@@ -19,6 +19,16 @@ class UserProfile(AbstractUser):
     def __str__(self):
         return self.username
 
+    def save(self, *args, **kwargs):
+        # delete old file when replacing by updating the file
+        try:
+            this = UserProfile.objects.get(id=self.id)
+            if this.image != self.image:
+                this.image.delete(save=False)
+        except:
+            pass  # when new photo then we do nothing, normal case
+        super(UserProfile, self).save(*args, **kwargs)
+
 
 class Banner(models.Model):
     title = models.CharField(max_length=100, verbose_name=u'标题')
@@ -33,3 +43,14 @@ class Banner(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        # delete old file when replacing by updating the file
+        try:
+            this = Banner.objects.get(id=self.id)
+            if this.image != self.image:
+                this.image.delete(save=False)
+        except:
+            pass  # when new photo then we do nothing, normal case
+        super(Banner, self).save(*args, **kwargs)
+
