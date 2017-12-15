@@ -2,19 +2,6 @@
 {% block css %}
 {% endblock %}
 
-
-{#{% block menu%}#}
-{#    <div class="collapse navbar-collapse" id="navbar-menu">#}
-{#        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">#}
-{#            <li><a href="{% url 'index' %}">首页</a></li>#}
-{#            <li><a href="{% url 'blog:Introduce' %}">关于我们</a></li>#}
-{#            <li><a href="{% url 'blog:news_list' %}">新闻中心</a></li>#}
-{#            <li class="active"><a href="{% url 'products:product_list' %}">产品展示</a></li>#}
-{#            <li><a href="{% url 'blog:story_list' %}">成功案例</a></li>#}
-{##}
-{#        </ul>#}
-{#    </div><!-- /.navbar-collapse -->#}
-{#{% endblock %}#}
 {% block content %}
      <section id="hello" class="home bg-mega" style="margin-top: 0px;">
                 <div class="row" >
@@ -45,12 +32,11 @@
                                 <div class="col-md-4 m-bottom-10">
                                     <div class="portfolio_item portfolio_item2">
                                         <img src="{{ MEDIA_URL }}{{ category.image }}" alt="" />
-                                        <div class="portfolio_hover text-center">
+                                        <div class="portfolio_text">
                                             <h6 class="text-uppercase text-white">{{ category.name }}</h6>
                                             <p class=" text-white">{{ category.desc }}</p>
                                             <div class="portfolio_hover_icon">
-                                                <a href="{% url 'products:product_picture' category.id %}" ><i class="fa fa-hand-pointer-o"></i></a>
-                                                <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
+                                                <a href="{{ MEDIA_URL }}{{ category.image }}" class="popup-img"><i class="fa fa-expand"></i></a>
                                             </div>
                                         </div>
                                     </div>
