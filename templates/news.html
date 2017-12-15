@@ -1,13 +1,13 @@
 {% extends "public/base.html" %}
 {% block css %}
     <style>
-    .cart-list li{
-         display: inline-block;
-                height: 50px;
-                line-height:50px;
-                margin: 0 10px;
-                color:#333;
-    }
+        .cart-list li {
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            margin: 0 10px;
+            color: #333;
+        }
     </style>
 {% endblock %}
 {% block content %}
@@ -16,7 +16,7 @@
             {% for newsbanner in newsbanners %}
                 <div class="col-md-12">
                     <a href="#">
-                        <img src="{{ MEDIA_URL}}{{ newsbanner.image }}" width="100%" style="max-height: 500px"/>
+                        <img src="{{ MEDIA_URL }}{{ newsbanner.image }}" width="100%" style="max-height: 500px"/>
                     </a>
                 </div>
             {% endfor %}
@@ -31,7 +31,8 @@
                             <p class="title">新闻中心</p>
                             <div class="separator_left"></div>
                             <ul class="news-list ">
-                                <li class="news-item active"><i class="icofont icofont-plus-circle"></i><span class="">最热新闻</span></li>
+                                <li class="news-item active"><i class="icofont icofont-plus-circle"></i><span class="">最热新闻</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -48,40 +49,40 @@
                                         </li>
                                     {% endfor %}
                                 </ul>
-{#                            分页#}
+                                {#                            分页#}
                             </div>
+                                                <div class="pageturn">
+                            <ul class="pagelist">
+                                {% if articles.has_previous %}
+                                    <li class="long"><a
+                                            href="?{{ articles.previous_page_number.querystring }}">上一页</a></li>
+                                {% endif %}
+
+                                {% for page in articles.pages %}
+                                    {% if page %}
+                                        {% ifequal page articles.number %}
+                                            <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a>
+                                            </li>
+                                        {% else %}
+                                            <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a>
+                                            </li>
+                                        {% endifequal %}
+                                    {% else %}
+                                        <li class="none"><a href="">...</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if articles.has_next %}
+                                    <li class="long"><a
+                                            href="?{{ articles.next_page_number.querystring }}">下一页</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+
                         </div>
                     </div>
                 </div>
             </div><!--End off row-->
-            <div class="pageturn">
-                <ul class="pagelist">
-                    {% if articles.has_previous %}
-                        <li class="long"><a
-                                href="?{{ articles.previous_page_number.querystring }}">上一页</a></li>
-                    {% endif %}
-
-                    {% for page in articles.pages %}
-                        {% if page %}
-                            {% ifequal page articles.number %}
-                                <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a>
-                                </li>
-                            {% else %}
-                                <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a>
-                                </li>
-                            {% endifequal %}
-                        {% else %}
-                            <li class="none"><a href="">...</a></li>
-                        {% endif %}
-                    {% endfor %}
-                    {% if articles.has_next %}
-                        <li class="long"><a
-                                href="?{{ articles.next_page_number.querystring }}">下一页</a>
-                        </li>
-                    {% endif %}
-                </ul>
-            </div>
-
         </div><!--End off container -->
     </section>
 

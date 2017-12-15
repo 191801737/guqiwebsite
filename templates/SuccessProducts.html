@@ -36,37 +36,37 @@
                     </div>
                 </div>
             </div><!--End off row -->
-            <div style="position: absolute;top: 50%;left:3%;margin-top: -30px" id="productLeft"><img
-                    src="/static/lunbotu/image/prev.png" alt="previous"></div>
-            <div style="position: absolute;top:50%;right:3%;margin-top: -30px" id="productRight"><img
-                    src="/static/lunbotu/image/next.png" alt="next"></div>
-            <div class="pageturn">
-                <ul class="pagelist">
-                    {% if cases.has_previous %}
-                        <li class="long"><a
-                                href="?{{ cases.previous_page_number.querystring }}">上一页</a></li>
-                    {% endif %}
-
-                    {% for page in cases.pages %}
-                        {% if page %}
-                            {% ifequal page cases.number %}
-                                <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a>
-                                </li>
-                            {% else %}
-                                <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a>
-                                </li>
-                            {% endifequal %}
-                        {% else %}
-                            <li class="none"><a href="">...</a></li>
-                        {% endif %}
-                    {% endfor %}
-                    {% if cases.has_next %}
-                        <li class="long"><a
-                                href="?{{ cases.next_page_number.querystring }}">下一页</a>
-                        </li>
-                    {% endif %}
-                </ul>
-            </div>
+{#            <div style="position: absolute;top: 50%;left:3%;margin-top: -30px" id="productLeft"><img#}
+{#                    src="/static/lunbotu/image/prev.png" alt="previous"></div>#}
+{#            <div style="position: absolute;top:50%;right:3%;margin-top: -30px" id="productRight"><img#}
+{#                    src="/static/lunbotu/image/next.png" alt="next"></div>#}
+{#            <div class="pageturn">#}
+{#                <ul class="pagelist">#}
+{#                    {% if cases.has_previous %}#}
+{#                        <li class="long"><a#}
+{#                                href="?{{ cases.previous_page_number.querystring }}">上一页</a></li>#}
+{#                    {% endif %}#}
+{##}
+{#                    {% for page in cases.pages %}#}
+{#                        {% if page %}#}
+{#                            {% ifequal page cases.number %}#}
+{#                                <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a>#}
+{#                                </li>#}
+{#                            {% else %}#}
+{#                                <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a>#}
+{#                                </li>#}
+{#                            {% endifequal %}#}
+{#                        {% else %}#}
+{#                            <li class="none"><a href="">...</a></li>#}
+{#                        {% endif %}#}
+{#                    {% endfor %}#}
+{#                    {% if cases.has_next %}#}
+{#                        <li class="long"><a#}
+{#                                href="?{{ cases.next_page_number.querystring }}">下一页</a>#}
+{#                        </li>#}
+{#                    {% endif %}#}
+{#                </ul>#}
+{#            </div>#}
 
         </div><!--End off container -->
     </section>
