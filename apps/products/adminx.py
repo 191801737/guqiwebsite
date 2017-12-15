@@ -3,7 +3,7 @@
 
 import xadmin
 
-from .models import Product, Style, Category, Picture
+from .models import Product, Style, Picture
 
 
 class ProductAdmin(object):
@@ -18,10 +18,10 @@ class StyleAdmin(object):
     search_fields = ['product__name', 'name', 'image', 'desc']
 
 
-class CategoryAdmin(object):
-    list_display = ['style', 'name', 'desc', 'image', 'add_time']
-    list_filter = ['style__name', 'name', 'desc', 'image', 'add_time']
-    search_fields = ['style__name', 'name', 'image', 'desc']
+# class CategoryAdmin(object):
+#     list_display = ['style', 'name', 'desc', 'image', 'add_time']
+#     list_filter = ['style__name', 'name', 'desc', 'image', 'add_time']
+#     search_fields = ['style__name', 'name', 'image', 'desc']
 
 
 class PictureAdmin(object):
@@ -32,7 +32,7 @@ class PictureAdmin(object):
 
 xadmin.site.register(Product, ProductAdmin)
 xadmin.site.register(Style, StyleAdmin)
-xadmin.site.register(Category, CategoryAdmin)
+# xadmin.site.register(Category, CategoryAdmin)
 xadmin.site.register(Picture, PictureAdmin)
 
 
