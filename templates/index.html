@@ -33,7 +33,12 @@
                                         <div id="slider" style="margin: 5% 5% ">
                                             <ul class="slides ">
                                                 {% for productbanner in productbanners %}
-                                                <li><a href="#"><img class="responsive" src="{{ MEDIA_URL }}{{ productbanner.image }}"></a></li>
+                                                    <li>
+                                                        <a href="{{ productbanner.url }}">
+                                                            <img class="responsive"
+                                                                 src="{{ MEDIA_URL }}{{ productbanner.image }}">
+                                                        </a>
+                                                    </li>
                                                 {% endfor %}
                                             </ul>
                                             <ul class="controls" >

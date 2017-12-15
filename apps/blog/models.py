@@ -28,13 +28,13 @@ class IntroduceBanner(models.Model):
 
 
 class NewsBanner(models.Model):
-    """成功案例的背景图"""
-    image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name='成功案例背景图')
+    """新闻的背景图"""
+    image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name='新闻背景图')
     url = models.URLField(max_length=200, verbose_name='访问地址')
     add_time = models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')
 
     class Meta:
-        verbose_name = "成功案例背景图"
+        verbose_name = "新闻背景图"
         verbose_name_plural = verbose_name
 
     def save(self, *args, **kwargs):
