@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import View
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, render_to_response, HttpResponse
-from .models import Product, Picture
+from .models import Product, Style, Category, Picture
 
 
 # Create your views here.
@@ -22,32 +22,27 @@ class ProductListView(View):
 
 class ProductStyleView(View):
     """
-    产品风格页
+    产品样式页
     """
     def get(self, request, product_id):
         product = Product.objects.get(id=int(product_id))
 
         return render(request, "product-style.html", locals())
 
-#
-# class ProductDetailView(View):
-#     """产品详情页"""
-#
-#     def get(self, request, product_id):
-#         pictures =
+
+class ProductCategoryView(View):
+    """商品分类"""
+
+    def get(self, request, style_id):
+        style = Style.objects.get(id=int(style_id))
+
+        return render(request, 'product-list.html', locals())
 
 
+class ProductPictureView(View):
+    """商品图片"""
 
-def productStyle(request):
-    return render_to_response('product-style.html', locals())
+    def get(self, request, category_id):
+        category = Category.objects.get(id=int(category_id))
 
-
-def productList(request):
-    return render_to_response('product-list.html', locals())
-
-
-def productDetail(request):
-    return render_to_response('produce-detail.html', locals())
-
-def successProductDetail(request):
-    return render_to_response('SuccessProductsDetail.html', locals())
+        return render(request, 'produce-detail.html', locals())

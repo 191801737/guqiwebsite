@@ -10,17 +10,17 @@
     </style>
 {% endblock %}
 
-{% block menu%}
-    <div class="collapse navbar-collapse" id="navbar-menu">
-        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-            <li class="active"><a href="/">首页</a></li>
-            <li><a href="{% url 'blog:Introduce' %}">关于我们</a></li>
-            <li><a href="/blog/list">新闻中心</a></li>
-            <li class="side-menu"><a href="{% url 'products:product_list' %}">产品展示</a></li>
-            <li><a href="{% url 'blog:story_list' %}">成功案例</a></li>
-        </ul>
-    </div><!-- /.navbar-collapse -->
-{% endblock %}
+{#{% block menu%}#}
+{#    <div class="collapse navbar-collapse" id="navbar-menu">#}
+{#        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">#}
+{#            <li class="active"><a href="{% url 'index' %}">首页</a></li>#}
+{#            <li><a href="{% url 'blog:Introduce' %}">关于我们</a></li>#}
+{#            <li><a href="{% url 'blog:news_list' %}">新闻中心</a></li>#}
+{#            <li class="side-menu"><a href="{% url 'products:product_list' %}">产品展示</a></li>#}
+{#            <li><a href="{% url 'blog:story_list' %}">成功案例</a></li>#}
+{#        </ul>#}
+{#    </div><!-- /.navbar-collapse -->#}
+{#{% endblock %}#}
 {% block content %}
             <section id="hello" class="home bg-mega" style="margin-top: 0px">
                 <div class="row">
@@ -32,33 +32,6 @@
                     </div>
                     {% endfor %}
                 </div>
-
-{#                <div class="">#}
-{#                    <div class="wp">#}
-{#                        <div class="fl">#}
-{#                            <div class="imgslide">#}
-{#                                <ul class="imgs">#}
-{#                                    {% for banner in all_banners %}#}
-{#                                        <li>#}
-{#                                            <a href="{{ banner.url }}">#}
-{#                                                <img width="1200" height="478" src="{{ MEDIA_URL }}{{ banner.image }}"/>#}
-{#                                            </a>#}
-{#                                        </li>#}
-{#                                    {% endfor %}#}
-{#                                </ul>#}
-{#                            </div>#}
-{#                            <div class="unslider-arrow prev"></div>#}
-{#                            <div class="unslider-arrow next"></div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="container">#}
-{#                    <div class="row">#}
-{#                        <div class="main_home">#}
-{##}
-{#                        </div>#}
-{#                    </div><!--End off row-->#}
-{#                </div><!--End off container -->#}
         </section>
             <!--Testimonial Section-->
 {#            <section id="testimonial" class="testimonial fix">#}
@@ -259,10 +232,6 @@
                     $("#rightbtn").trigger('click');
                 }, 3000);
              })
-
-
-
-
 </script>
 {% endblock %}
 

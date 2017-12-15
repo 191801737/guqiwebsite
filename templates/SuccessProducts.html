@@ -3,18 +3,18 @@
 {% endblock %}
 
 
-{% block menu %}
-    <div class="collapse navbar-collapse" id="navbar-menu">
-        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-            <li><a href="/">首页</a></li>
-            <li><a href="{% url 'blog:Introduce' %}">关于我们</a></li>
-            <li><a href="/blog/list">新闻中心</a></li>
-            <li ><a href="{% url 'products:product_list' %}">产品展示</a></li>
-            <li class="active"><a href="{% url 'blog:story_list' %}">成功案例</a></li>
-
-        </ul>
-    </div><!-- /.navbar-collapse -->
-{% endblock %}
+{#{% block menu %}#}
+{#    <div class="collapse navbar-collapse" id="navbar-menu">#}
+{#        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">#}
+{#            <li><a href="{% url 'index' %}">首页</a></li>#}
+{#            <li><a href="{% url 'blog:Introduce' %}">关于我们</a></li>#}
+{#            <li><a href="{% url 'blog:news_list' %}">新闻中心</a></li>#}
+{#            <li ><a href="{% url 'products:product_list' %}">产品展示</a></li>#}
+{#            <li class="active"><a href="{% url 'blog:story_list' %}">成功案例</a></li>#}
+{##}
+{#        </ul>#}
+{#    </div><!-- /.navbar-collapse -->#}
+{#{% endblock %}#}
 {% block content %}
     <section id="portfolio" class="portfolio lightbg">
         <div class="container">

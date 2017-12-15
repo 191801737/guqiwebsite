@@ -109,7 +109,16 @@
                     <!-- End Header Navigation -->
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                    {% block menu%}
+                    {% block menu %}
+                        <div class="collapse navbar-collapse" id="navbar-menu">
+                            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                <li {% if request.path == '/' %} class="active" {% endif %}><a href="{% url 'index' %}">首页</a></li>
+                                <li {% if request.path|slice:'15' == '/blog/introduce' %}class="active"{% endif %} ><a href="{% url 'blog:Introduce' %}">关于我们</a></li>
+                                <li {% if request.path|slice:'10' == '/blog/news' %}class="active"{% endif %} ><a href="{% url 'blog:news_list' %}">新闻中心</a></li>
+                                <li {% if request.path|slice:'8' == '/product' %}class="active"{% endif %} ><a href="{% url 'products:product_list' %}">产品展示</a></li>
+                                <li {% if request.path|slice:'11' == '/blog/story' %}class="active"{% endif %}><a href="{% url 'blog:story_list' %}">成功案例</a></li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
                     {% endblock %}
 
                 </div>

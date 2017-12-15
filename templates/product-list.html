@@ -3,18 +3,18 @@
 {% endblock %}
 
 
-{% block menu%}
-    <div class="collapse navbar-collapse" id="navbar-menu">
-        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-            <li><a href="/">首页</a></li>
-            <li><a href="{% url 'blog:Introduce' %}">关于我们</a></li>
-            <li><a href="/blog/list">新闻中心</a></li>
-            <li class="active"><a href="{% url 'products:product_list' %}">产品展示</a></li>
-            <li><a href="{% url 'blog:story_list' %}">成功案例</a></li>
-
-        </ul>
-    </div><!-- /.navbar-collapse -->
-{% endblock %}
+{#{% block menu%}#}
+{#    <div class="collapse navbar-collapse" id="navbar-menu">#}
+{#        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">#}
+{#            <li><a href="{% url 'index' %}">首页</a></li>#}
+{#            <li><a href="{% url 'blog:Introduce' %}">关于我们</a></li>#}
+{#            <li><a href="{% url 'blog:news_list' %}">新闻中心</a></li>#}
+{#            <li class="active"><a href="{% url 'products:product_list' %}">产品展示</a></li>#}
+{#            <li><a href="{% url 'blog:story_list' %}">成功案例</a></li>#}
+{##}
+{#        </ul>#}
+{#    </div><!-- /.navbar-collapse -->#}
+{#{% endblock %}#}
 {% block content %}
      <section id="hello" class="home bg-mega" style="margin-top: 0px;">
                 <div class="row" >
@@ -29,13 +29,6 @@
         <div class="container">
             <div class="row">
                 <div class="main_portfolio roomy-50">
-{#                    <div class="col-md-8 col-md-offset-2">#}
-{#                        <div class="head_title text-center">#}
-{#                            <h2 style="color:#fff">精品分类</h2>#}
-{#                            <div class="separator_auto" ></div>#}
-{#                            <p style="color:#fff"> 传承文明 注重品质 不断创新 延续文明</p>#}
-{#                        </div>#}
-{#                    </div>#}
                     <div class="portfolio_content" >
                         <div class="col-md-3">
                             <div class="news_content">
@@ -48,131 +41,24 @@
                         </div>
                         <div class="col-md-9" style="border: 1px solid #eee;padding: 10px">
                             <div class="row">
-                                {% for products in all_products %}
-                                    <div class="col-md-4">
-                                        <div class="portfolio_item portfolio_item2">
-                                            <img width="280" height="350" src="{{ MEDIA_URL }}{{ products.image }}"
-                                                 alt=""/>
-                                            <div class="portfolio_text">
-                                                <h6 class="text-uppercase text-white">{{ products.name }}</h6>
-                                                <p class=" text-white">{{ products.desc }}</p>
-                                                <div class="portfolio_hover_icon">
-                                                   <a href="/static/images/Portfolio/3.jpg" ><i class="fa fa-hand-pointer-o"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endfor %}
-{#                                <div class="col-md-4 m-bottom-10">#}
-{#                                    <div class="portfolio_item portfolio_item2">#}
-{#                                        <img src="/static/images/Portfolio/3.jpg" alt="" />#}
-{#                                        <div class="portfolio_hover text-center">#}
-{#                                            <h6 class="text-uppercase text-white">Title1</h6>#}
-{#                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>#}
-{#                                            <div class="portfolio_hover_icon">#}
-{#                                                <a href="/productdetail" ><i class="fa fa-hand-pointer-o"></i></a>#}
-{#                                                <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                               <div class="col-md-4 m-bottom-10">#}
-{#                                    <div class="portfolio_item portfolio_item2">#}
-{#                                        <img src="/static/images/Portfolio/3.jpg" alt="" />#}
-{#                                        <div class="portfolio_hover text-center">#}
-{#                                            <h6 class="text-uppercase text-white">Title1</h6>#}
-{#                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>#}
-{#                                            <div class="portfolio_hover_icon">#}
-{#                                                <a href="/productdetail" ><i class="fa fa-hand-pointer-o"></i></a>#}
-{#                                                <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                               <div class="col-md-4 m-bottom-10">#}
-{#                                    <div class="portfolio_item portfolio_item2">#}
-{#                                        <img src="/static/images/Portfolio/3.jpg" alt="" />#}
-{#                                        <div class="portfolio_hover text-center">#}
-{#                                            <h6 class="text-uppercase text-white">Title1</h6>#}
-{#                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>#}
-{#                                            <div class="portfolio_hover_icon">#}
-{#                                                <a href="/productdetail" ><i class="fa fa-hand-pointer-o"></i></a>#}
-{#                                                <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
+                                {% for category in style.get_style_category %}
                                 <div class="col-md-4 m-bottom-10">
                                     <div class="portfolio_item portfolio_item2">
-                                        <img src="/static/images/Portfolio/3.jpg" alt="" />
+                                        <img src="{{ MEDIA_URL }}{{ category.image }}" alt="" />
                                         <div class="portfolio_hover text-center">
-                                            <h6 class="text-uppercase text-white">Title1</h6>
-                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>
+                                            <h6 class="text-uppercase text-white">{{ category.name }}</h6>
+                                            <p class=" text-white">{{ category.desc }}</p>
                                             <div class="portfolio_hover_icon">
-                                                <a href="/productdetail" ><i class="fa fa-hand-pointer-o"></i></a>
+                                                <a href="{% url 'products:product_picture' category.id %}" ><i class="fa fa-hand-pointer-o"></i></a>
                                                 <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            <div class="col-md-4 m-bottom-10">
-                                    <div class="portfolio_item portfolio_item2">
-                                        <img src="/static/images/Portfolio/3.jpg" alt="" />
-                                        <div class="portfolio_hover text-center">
-                                            <h6 class="text-uppercase text-white">Title1</h6>
-                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>
-                                            <div class="portfolio_hover_icon">
-                                                <a href="/productdetail" ><i class="fa fa-hand-pointer-o"></i></a>
-                                                <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <div class="col-md-4 m-bottom-10">
-                                    <div class="portfolio_item portfolio_item2">
-                                        <img src="/static/images/Portfolio/3.jpg" alt="" />
-                                        <div class="portfolio_hover text-center">
-                                            <h6 class="text-uppercase text-white">Title1</h6>
-                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>
-                                            <div class="portfolio_hover_icon">
-                                                <a href="/productdetail" ><i class="fa fa-hand-pointer-o"></i></a>
-                                                <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <div class="col-md-4 m-bottom-10">
-                                    <div class="portfolio_item portfolio_item2">
-                                        <img src="/static/images/Portfolio/3.jpg" alt="" />
-                                        <div class="portfolio_hover text-center">
-                                            <h6 class="text-uppercase text-white">Title1</h6>
-                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>
-                                            <div class="portfolio_hover_icon">
-                                                <a href="/productdetail" ><i class="fa fa-hand-pointer-o"></i></a>
-                                                <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <div class="col-md-4 m-bottom-10">
-                                    <div class="portfolio_item portfolio_item2">
-                                        <img src="/static/images/Portfolio/3.jpg" alt="" />
-                                        <div class="portfolio_hover text-center">
-                                            <h6 class="text-uppercase text-white">Title1</h6>
-                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>
-                                            <div class="portfolio_hover_icon">
-                                                <a href="/productdetail" ><i class="fa fa-hand-pointer-o"></i></a>
-                                                <a href="/static/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
-
-
                     </div>
-
                 </div>
             </div><!--End off row -->
         </div><!--End off container -->

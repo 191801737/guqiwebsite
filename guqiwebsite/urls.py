@@ -35,7 +35,7 @@ urlpatterns = [
     # 配置上传文件的访问处理函数
     url(r'^media/(?P<path>.*)/$', serve, {'document_root': MEDIA_ROOT}),
 
-    # 课程机构url
+    # 内容类的URL
     url(r'^blog/', include('blog.urls', namespace='blog'), ),
 
     # 用户界面的url
@@ -46,10 +46,10 @@ urlpatterns = [
 
     # 富文本相关url
     url(r'^ueditor/', include('DjangoUeditor.urls')),
-    url(r'^productstyle/', product_views.productStyle, name='productStyle'),
-    url(r'^productlist/', product_views.productList, name='productList'),
-    url(r'^productdetail/', product_views.productDetail, name='productDetail'),
-    url(r'^successproductdetail/', product_views.successProductDetail, name='successProductDetail'),
+    # url(r'^productstyle/', product_views.productStyle, name='productStyle'),
+    # url(r'^productlist/', product_views.productList, name='productList'),
+    # url(r'^productdetail/', product_views.productDetail, name='productDetail'),
+    # url(r'^successproductdetail/', product_views.successProductDetail, name='successProductDetail'),
 ]
 
 # 全局XXX页面配置

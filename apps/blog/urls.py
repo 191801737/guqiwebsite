@@ -8,11 +8,11 @@ from .views import ArticleView, ArticleDetailView, IntroduceView, CaseView, Case
 
 
 urlpatterns = [
-    # 文章列表
-    url(r'^list/$', ArticleView.as_view(), name='articles_list'),
+    # 新闻列表
+    url(r'^news_list/$', ArticleView.as_view(), name='news_list'),
 
-    # 文章详情页
-    url(r'^detail/(?P<article_id>\d+)/$', ArticleDetailView.as_view(), name='article_detail'),
+    # 新闻详情页
+    url(r'^news_detail/(?P<article_id>\d+)/$', ArticleDetailView.as_view(), name='news_detail'),
 
     # 成功案例列表
     url(r'^story_list/$', CaseView.as_view(), name='story_list'),
