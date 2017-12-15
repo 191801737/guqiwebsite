@@ -100,5 +100,18 @@ li.long{
         color:#333;
         line-height: 25px;
 }
+.text-style a{
+    color: #fff;
+    font-size: 14px;
+    font-family: '微软雅黑', sans-serif;
+    display: inline-block;
+    margin: 5px;
+    background: #4bcf99;
 
+}
+.text-style a:hover{
+    background: #4bcf99;
+    border: 1px solid #4bcf99;
+    color: #ccc;
+}
 
