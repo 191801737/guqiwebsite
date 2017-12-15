@@ -39,7 +39,7 @@ class ProductStyleView(View):
 
         # Provide Paginator with the request object for complete querystring generation
 
-        p = Paginator(all_styles, 6, request=request)
+        p = Paginator(all_styles, 9, request=request)
 
         styles = p.page(page)
 
@@ -62,7 +62,7 @@ class ProductCategoryView(View):
 
         # Provide Paginator with the request object for complete querystring generation
 
-        p = Paginator(all_categorys, 6, request=request)
+        p = Paginator(all_categorys, 9, request=request)
 
         categorys = p.page(page)
 
