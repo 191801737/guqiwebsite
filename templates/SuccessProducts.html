@@ -19,8 +19,10 @@
                                                 <h6 class="text-uppercase text-white">{{ case.title }}</h6>
                                                 <p class=" text-white">{{ case.desc }}</p>
                                                 <div class="portfolio_hover_icon">
-                                                    <a href="{% url 'blog:story_detail' case.id %}"><i class="fa fa-hand-pointer-o"></i></a>
-                                                    <a href="{{ MEDIA_URL }}{{ case.image }}" class="popup-img"><i class="fa fa-expand"></i></a>
+                                                    <a href="{% url 'blog:story_detail' case.id %}"><i
+                                                            class="fa fa-hand-pointer-o"></i></a>
+                                                    <a href="{{ MEDIA_URL }}{{ case.image }}" class="popup-img"><i
+                                                            class="fa fa-expand"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -35,6 +37,34 @@
                     src="/static/lunbotu/image/prev.png" alt="previous"></div>
             <div style="position: absolute;top:50%;right:3%;margin-top: -30px" id="productRight"><img
                     src="/static/lunbotu/image/next.png" alt="next"></div>
+            <div class="pageturn">
+                <ul class="pagelist">
+                    {% if products.has_previous %}
+                        <li class="long"><a
+                                href="?{{ products.previous_page_number.querystring }}">上一页</a></li>
+                    {% endif %}
+
+                    {% for page in products.pages %}
+                        {% if page %}
+                            {% ifequal page products.number %}
+                                <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a>
+                                </li>
+                            {% else %}
+                                <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a>
+                                </li>
+                            {% endifequal %}
+                        {% else %}
+                            <li class="none"><a href="">...</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if products.has_next %}
+                        <li class="long"><a
+                                href="?{{ products.next_page_number.querystring }}">下一页</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+
         </div><!--End off container -->
     </section>
 

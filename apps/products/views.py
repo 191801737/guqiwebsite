@@ -64,6 +64,20 @@ class ProductCategoryView(View):
     def get(self, request, style_id):
         style = Style.objects.get(id=int(style_id))
 
+        all_categorys = style.get_style_category()
+
+        # 对商品类别进行分页
+        try:
+            page = request.GET.get('page', 1)
+        except PageNotAnInteger:
+            page = 1
+
+        # Provide Paginator with the request object for complete querystring generation
+
+        p = Paginator(all_categorys, 6, request=request)
+
+        categorys = p.page(page)
+
         return render(request, 'product-list.html', locals())
 
 

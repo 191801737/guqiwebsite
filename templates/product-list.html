@@ -3,44 +3,46 @@
 {% endblock %}
 
 {% block content %}
-     <section id="hello" class="home bg-mega" style="margin-top: 0px;">
-                <div class="row" >
-                    <div class="col-md-12">
-                      <a href="#">
-                        <img src="/static/images/guqi/2-5.jpg" width="100%" style="max-height: 500px" />
-                    </a>
-                    </div>
-                </div>
-        </section>
-        <section id="portfolio" class="portfolio " >
+    <section id="hello" class="home bg-mega" style="margin-top: 0px;">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="#">
+                    <img src="/static/images/guqi/2-5.jpg" width="100%" style="max-height: 500px"/>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio" class="portfolio ">
         <div class="container">
             <div class="row">
                 <div class="main_portfolio roomy-50">
-                    <div class="portfolio_content" >
+                    <div class="portfolio_content">
                         <div class="col-md-3">
                             <div class="news_content">
-                            <p class="title">xxxxx桌子</p>
-                            <div class="separator_left"></div>
-                            <ul class="news-list ">
-                                <li class="news-item active"><i class="icofont icofont-plus-circle"></i><span class="">最热样式</span></li>
-                            </ul>
-                        </div>
+                                <p class="title">xxxxx桌子</p>
+                                <div class="separator_left"></div>
+                                <ul class="news-list ">
+                                    <li class="news-item active"><i class="icofont icofont-plus-circle"></i><span
+                                            class="">最热样式</span></li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="col-md-9" style="border: 1px solid #eee;padding: 10px">
                             <div class="row">
-                                {% for category in style.get_style_category %}
-                                <div class="col-md-4 m-bottom-10">
-                                    <div class="portfolio_item portfolio_item2">
-                                        <img src="{{ MEDIA_URL }}{{ category.image }}" alt="" />
-                                        <div class="portfolio_text">
-                                            <h6 class="text-uppercase text-white">{{ category.name }}</h6>
-                                            <p class=" text-white">{{ category.desc }}</p>
-                                            <div class="portfolio_hover_icon">
-                                                <a href="{{ MEDIA_URL }}{{ category.image }}" class="popup-img"><i class="fa fa-expand"></i></a>
+                                {% for category in categorys.object_list %}
+                                    <div class="col-md-4 m-bottom-10">
+                                        <div class="portfolio_item portfolio_item2">
+                                            <img src="{{ MEDIA_URL }}{{ category.image }}" alt=""/>
+                                            <div class="portfolio_text">
+                                                <h6 class="text-uppercase text-white">{{ category.name }}</h6>
+                                                <p class=" text-white">{{ category.desc }}</p>
+                                                <div class="portfolio_hover_icon">
+                                                    <a href="{{ MEDIA_URL }}{{ category.image }}" class="popup-img"><i
+                                                            class="fa fa-expand"></i></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 {% endfor %}
                             </div>
                         </div>
@@ -48,6 +50,34 @@
                 </div>
             </div><!--End off row -->
         </div><!--End off container -->
+        <div class="pageturn">
+            <ul class="pagelist">
+                {% if categorys.has_previous %}
+                    <li class="long"><a
+                            href="?{{ categorys.previous_page_number.querystring }}">上一页</a></li>
+                {% endif %}
+
+                {% for page in categorys.pages %}
+                    {% if page %}
+                        {% ifequal page categorys.number %}
+                            <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a>
+                            </li>
+                        {% else %}
+                            <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a>
+                            </li>
+                        {% endifequal %}
+                    {% else %}
+                        <li class="none"><a href="">...</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if categorys.has_next %}
+                    <li class="long"><a
+                            href="?{{ categorys.next_page_number.querystring }}">下一页</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+
     </section>
 
 {% endblock %}
