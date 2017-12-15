@@ -22,17 +22,17 @@
 {#    </div><!-- /.navbar-collapse -->#}
 {#{% endblock %}#}
 {% block content %}
-            <section id="hello" class="home bg-mega" style="margin-top: 0px">
-                <div class="row">
-                    {% for indexbanner in indexbanners %}
-                    <div class="col-md-12">
-                            <a href="#">
-                                <img src="{{ MEDIA_URL }}{{ indexbanner.image }}" style="width: 100%;height: 100%;" />
-                            </a>
-                    </div>
-                    {% endfor %}
+    <section id="hello" class="home bg-mega" style="margin-top: 0px">
+        <div class="row">
+            {% for indexbanner in indexbanners %}
+                <div class="col-md-12">
+                    <a href="#">
+                        <img src="{{ MEDIA_URL }}{{ indexbanner.image }}" style="width: 100%;height: 100%;"/>
+                    </a>
                 </div>
-        </section>
+            {% endfor %}
+        </div>
+    </section>
             <!--Testimonial Section-->
 {#            <section id="testimonial" class="testimonial fix">#}
 {#                <div class="overlay"></div>#}

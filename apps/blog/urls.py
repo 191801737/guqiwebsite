@@ -18,8 +18,7 @@ urlpatterns = [
     url(r'^story_list/$', CaseView.as_view(), name='story_list'),
 
     # 成功案例详情页
-    url(r'^story_detail/(?P<article_id>\d+)/$', CaseDetailView.as_view(), name='story_detail'),
-
+    url(r'^story_detail/(?P<case_id>\d+)/$', CaseDetailView.as_view(), name='story_detail'),
 
     # 关于我们
     url(r'^introduce/$', IntroduceView.as_view(), name='Introduce'),

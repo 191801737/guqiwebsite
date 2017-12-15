@@ -77,7 +77,7 @@ class CaseDetailView(View):
 
     def get(self, request, case_id):
         article = Case.objects.get(id=int(case_id))
-        return render(request, 'case-detail.html', locals())
+        return render(request, 'SuccessProductsDetail.html', locals())
 
 
 class IntroduceView(View):

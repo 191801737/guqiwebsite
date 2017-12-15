@@ -46,7 +46,6 @@
                     <div class="col-md-9">
                          <div class="about-border" id="company">
                              {% for introduce in introduces %}
-
                                  <div class="about-title">
                                      <p class="title">公司简介</p>
                                      <div class="separator_auto"></div>
@@ -63,7 +62,9 @@
                                          <div class="separator_auto"></div>
                                      </div>
                                      <div class="about_content">
-                                         <p style="text-indent:2em;text-align: center">{% autoescape off %}{{ introduce.culture }}{% endautoescape %}</p>
+                                         <p style="text-indent:2em;text-align: center">
+                                             {% autoescape off %}{{ introduce.culture }}{% endautoescape %}
+                                         </p>
                                      </div>
                                  </div>
                                  <div class="about-border" id="idea" style="display: none">
