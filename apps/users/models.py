@@ -33,7 +33,7 @@ class UserProfile(AbstractUser):
 class IndexBanner(models.Model):
     """首页背景图"""
     image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name=u'首页背景')
-    url = models.URLField(max_length=200, verbose_name=u'访问地址')
+    url = models.URLField(max_length=200, verbose_name=u'访问地址', null=True, blank=True)
     add_time = models.DateTimeField(default=datetime.datetime.now, verbose_name=u'添加时间')
 
     class Meta:

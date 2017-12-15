@@ -31,21 +31,17 @@
                                                 <h6 class="text-uppercase text-white">{{ case.title }}</h6>
                                                 <p class=" text-white">{{ case.desc }}</p>
                                                 <div class="portfolio_hover_icon">
-                                                    <a href="/successproductdetail" class="popup-img"><i
+                                                    <a href="{% url 'blog:story_detail' case.id %}" class="popup-img"><i
                                                             class="fa fa-expand"></i></a>
-                                                    <a href="/successproductdetail"><i class="fa fa-search"></i></a>
+                                                    <a href="{% url 'blog:story_detail' case.id %}"><i class="fa fa-search"></i></a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 {% endfor %}
-
                             </div>
                         </div>
-
-
                     </div>
-
                 </div>
             </div><!--End off row -->
             <div style="position: absolute;top: 50%;left:3%;margin-top: -30px" id="productLeft"><img

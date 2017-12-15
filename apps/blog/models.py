@@ -77,6 +77,7 @@ class Article(models.Model):
 
 
 class Case(models.Model):
+    """成功案例"""
     title = models.CharField(max_length=256, verbose_name='标题')
     desc = models.CharField(max_length=256, verbose_name='描述', default="")
     content = UEditorField(verbose_name='内容', width=600, height=300, toolbars="full", imagePath="blog/ueditors/",
@@ -106,6 +107,7 @@ class Case(models.Model):
 
 
 class Introduce(models.Model):
+    """关于我们"""
     title = models.CharField(max_length=256, verbose_name='标题', null=True, blank=True)
     content = UEditorField(verbose_name='公司简介', width=600, height=300, toolbars="full", imagePath="blog/ueditors/",
                            filePath="blog/ueditors/", default='')
