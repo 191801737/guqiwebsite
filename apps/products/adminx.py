@@ -7,27 +7,27 @@ from .models import Product, Style, Category, Picture
 
 
 class ProductAdmin(object):
-    list_display = ['name', 'desc', 'tag', 'image', 'add_time']
-    list_filter = ['name', 'desc', 'tag', 'image', 'add_time']
-    search_fields = ['name', 'desc', 'tag']
+    list_display = ['name', 'desc', 'image', 'add_time']
+    list_filter = ['name', 'desc', 'image', 'add_time']
+    search_fields = ['name', 'desc']
 
 
 class StyleAdmin(object):
-    list_display = ['product', 'name', 'desc', 'add_time']
-    list_filter = ['product__name', 'name', 'desc', 'add_time']
-    search_fields = ['product__name', 'name', 'desc']
+    list_display = ['product', 'name', 'desc', 'image', 'add_time']
+    list_filter = ['product__name', 'name', 'desc', 'image', 'add_time']
+    search_fields = ['product__name', 'name', 'image', 'desc']
 
 
 class CategoryAdmin(object):
-    list_display = ['style', 'name', 'desc', 'add_time']
-    list_filter = ['style__name', 'name', 'desc', 'add_time']
-    search_fields = ['style__name', 'name', 'desc']
+    list_display = ['style', 'name', 'desc', 'image', 'add_time']
+    list_filter = ['style__name', 'name', 'desc', 'image', 'add_time']
+    search_fields = ['style__name', 'name', 'image', 'desc']
 
 
 class PictureAdmin(object):
-    list_display = ['category', 'name', 'add_time']
-    list_filter = ['category__name', 'name', 'add_time']
-    search_fields = ['category__name', 'name']
+    list_display = ['category', 'name', 'image', 'add_time']
+    list_filter = ['category__name', 'name', 'image', 'add_time']
+    search_fields = ['category__name', 'image', 'name']
 
 
 xadmin.site.register(Product, ProductAdmin)
