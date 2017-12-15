@@ -17,7 +17,9 @@
              <div class="row">
                  <div class="col-md-9 col-md-offset-3">
                      <div class="text-style">
-                              <a class="btn btn-default" href="#">产品展示</a>><a href="#" class="btn btn-default">产品样式</a>><a href="#" class="btn btn-default">xxx</a>
+                         <a class="btn btn-default" href="{% url 'products:product_list' %}">产品展示</a>>
+                         <a href="{% url 'products:product_style' style.id %}" class="btn btn-default">产品样式</a>>
+                         <a href="#" class="btn btn-default">xxx</a>
                      </div>
                  </div>
             </div>
