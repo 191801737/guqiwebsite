@@ -21,6 +21,9 @@
 
 {% block content %}
      <div class="text-title">
+
+            成功案例详细介绍
+
      </div>
     <div class="container" style="margin: -40px auto 40px;background-color: #fff;text-align: center">
         <div class="text-content" >

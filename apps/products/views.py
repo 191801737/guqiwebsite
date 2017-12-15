@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import View
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render, render_to_response, HttpResponse
-from .models import Product, Style, Picture
+from django.shortcuts import render
+from .models import Product, Style,  ProductStyleBanner, ProductPictureBanner
 
 
 # Create your views here.
@@ -27,10 +27,15 @@ class ProductStyleView(View):
     """
     def get(self, request, product_id):
 
+        # 获取背景图
+        productstylebanners = ProductStyleBanner.objects.all()[:1]
+
         # 获取产品对应的样式
         product = Product.objects.get(id=int(product_id))
 
+        # 获取产品所有风格
         all_styles = product.get_product_style()
+
         # 对样式进行分页
         try:
             page = request.GET.get('page', 1)
@@ -73,9 +78,14 @@ class ProductPictureView(View):
     """商品图片"""
 
     def get(self, request, style_id):
+
+        # 获取背景图
+        productpicturebanners = ProductPictureBanner.objects.all()[:1]
+
         style = Style.objects.get(id=int(style_id))
 
-        all_pictures = Picture.objects.all()
+        # 获取风格所有的图片
+        all_pictures = style.get_style_picture()
 
         # 对商品类别进行分页
         try:

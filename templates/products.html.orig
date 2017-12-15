@@ -14,14 +14,13 @@
                                 {% for product in products %}
                                     <div class="col-md-4" style="padding:0;border: 1px solid #eee">
                                         <div class="portfolio_item portfolio_item2">
-                                            <img src="{{ MEDIA_URL }}{{ product.image }}" alt=""/>
+                                            <img  src="{{ MEDIA_URL }}{{ product.image }}" alt=""/>
                                             <div class="portfolio_text ">
                                                 <div class="text-background">
                                                     <h3 class="text-uppercase text-white ">{{ product.name }}</h3>
                                                     <p class=" text-white">{{ product.desc }}</p>
                                                     <div class="portfolio_hover_icon ">
-                                                    <a href="{% url 'products:product_style' product.id %}"><i
-                                                            class="fa fa-hand-pointer-o"></i></a>
+                                                   <a href="{% url 'products:product_style' product.id %}" ><i class="fa fa-hand-pointer-o"></i></a>
                                                 </div>
                                                 </div>
 
