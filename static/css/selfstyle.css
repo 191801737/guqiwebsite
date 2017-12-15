@@ -109,7 +109,12 @@ li.long{
     background: #4bcf99;
 
 }
-.text-style a:hover{
+.text-style a:link,.text-style a:visited{
+    border: 1px solid #4bcf99;
+     background: #4bcf99;
+     color:#fff
+}
+.text-style a:hover,.text-style a:active{
     background: #4bcf99;
     border: 1px solid #4bcf99;
     color: #ccc;
