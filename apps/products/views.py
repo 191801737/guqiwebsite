@@ -16,19 +16,7 @@ class ProductListView(View):
     def get(self, request):
 
         # 获取所有产品
-        all_products = Product.objects.all()
-
-        # 对产品进行分页
-        try:
-            page = request.GET.get('page', 1)
-        except PageNotAnInteger:
-            page = 1
-
-        # Provide Paginator with the request object for complete querystring generation
-
-        p = Paginator(all_products, 6, request=request)
-
-        products = p.page(page)
+        products = Product.objects.all()
 
         return render(request, 'products.html', locals())
 

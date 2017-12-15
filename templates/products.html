@@ -11,15 +11,15 @@
                     <div class="portfolio_content m-top-20">
                         <div class="col-md-12">
                             <div class="row">
-                                {% for products in products.object_list %}
+                                {% for product in products %}
                                     <div class="col-md-4"  style="padding:0;border: 1px solid #eee">
                                         <div class="portfolio_item portfolio_item2">
-                                            <img  src="{{ MEDIA_URL }}{{ products.image }}" alt=""/>
+                                            <img  src="{{ MEDIA_URL }}{{ product.image }}" alt=""/>
                                             <div class="portfolio_text">
-                                                <h6 class="text-uppercase text-white">{{ products.name }}</h6>
-                                                <p class=" text-white">{{ products.desc }}</p>
+                                                <h6 class="text-uppercase text-white">{{ product.name }}</h6>
+                                                <p class=" text-white">{{ product.desc }}</p>
                                                 <div class="portfolio_hover_icon">
-                                                   <a href="{% url 'products:product_style' products.id %}" ><i class="fa fa-hand-pointer-o"></i></a>
+                                                   <a href="{% url 'products:product_style' product.id %}" ><i class="fa fa-hand-pointer-o"></i></a>
                                                 </div>
                                             </div>
                                         </div>
