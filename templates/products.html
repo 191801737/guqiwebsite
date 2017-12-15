@@ -26,34 +26,6 @@
                                     </div>
                                 {% endfor %}
                             </div>
-                                <div class="pageturn">
-                                    <ul class="pagelist">
-                                        {% if products.has_previous %}
-                                            <li class="long"><a
-                                                    href="?{{ products.previous_page_number.querystring }}">上一页</a></li>
-                                        {% endif %}
-
-                                        {% for page in products.pages %}
-                                            {% if page %}
-                                                {% ifequal page products.number %}
-                                                    <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a>
-                                                    </li>
-                                                {% else %}
-                                                    <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a>
-                                                    </li>
-                                                {% endifequal %}
-                                            {% else %}
-                                                <li class="none"><a href="">...</a></li>
-                                            {% endif %}
-                                        {% endfor %}
-                                        {% if products.has_next %}
-                                            <li class="long"><a
-                                                    href="?{{ products.next_page_number.querystring }}">下一页</a>
-                                            </li>
-                                        {% endif %}
-                                    </ul>
-                                </div>
-
                         </div>
                     </div>
                 </div>

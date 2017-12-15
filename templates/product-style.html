@@ -3,78 +3,81 @@
 {% endblock %}
 
 {% block content %}
-     <section id="hello" class="home bg-mega" style="margin-top: 0px;">
-                <div class="row" >
-                    <div class="col-md-12">
-                      <a href="#">
-                        <img src="/static/images/guqi/2-5.jpg" width="100%" style="max-height: 500px" />
-                    </a>
-                    </div>
-                </div>
-        </section>
-        <section id="portfolio" class="portfolio " >
+    <section id="hello" class="home bg-mega" style="margin-top: 0px;">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="#">
+                    <img src="/static/images/guqi/2-5.jpg" width="100%" style="max-height: 500px"/>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio" class="portfolio ">
         <div class="container">
             <div class="row">
                 <div class="main_portfolio roomy-50">
-                    <div class="portfolio_content" >
+                    <div class="portfolio_content">
                         <div class="col-md-3">
                             <div class="news_content">
-                            <p class="title">产品样式</p>
-                            <div class="separator_left"></div>
-                            <ul class="news-list ">
-                                <li class="news-item active"><i class="icofont icofont-plus-circle"></i><span class="">最热样式</span></li>
-                            </ul>
-                        </div>
+                                <p class="title">产品样式</p>
+                                <div class="separator_left"></div>
+                                <ul class="news-list ">
+                                    <li class="news-item active"><i class="icofont icofont-plus-circle"></i><span
+                                            class="">最热样式</span></li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="col-md-9" style="border: 1px solid #eee;padding: 10px">
                             <div class="row">
                                 {% for style in styles.object_list %}
-                                <div class="col-md-4 m-bottom-10">
-                                    <div class="portfolio_item portfolio_item2">
-                                        <img src="{{ MEDIA_URL }}{{ style.image }}" alt="" />
-                                        <div class="portfolio_text">
-                                            <h6 class="text-uppercase text-white">{{ style.name }}</h6>
-                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>
-                                            <div class="portfolio_hover_icon">
-                                                <a href="{% url 'products:product_category' style.id %}" ><i class="fa fa-hand-pointer-o"></i></a>
+                                    <div class="col-md-4 m-bottom-10">
+                                        <div class="portfolio_item portfolio_item2">
+                                            <img src="{{ MEDIA_URL }}{{ style.image }}" alt=""/>
+                                            <div class="portfolio_text">
+                                                <h6 class="text-uppercase text-white">{{ style.name }}</h6>
+                                                <p class=" text-white">Lorem ipsum dolor sit amet</p>
+                                                <div class="portfolio_hover_icon">
+                                                    <a href="{% url 'products:product_category' style.id %}"><i
+                                                            class="fa fa-hand-pointer-o"></i></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 {% endfor %}
                             </div>
+                            <div class="pageturn">
+                                <ul class="pagelist">
+                                    {% if styles.has_previous %}
+                                        <li class="long"><a
+                                                href="?{{ styles.previous_page_number.querystring }}">上一页</a></li>
+                                    {% endif %}
+
+                                    {% for page in styles.pages %}
+                                        {% if page %}
+                                            {% ifequal page styles.number %}
+                                                <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a>
+                                                </li>
+                                            {% else %}
+                                                <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a>
+                                                </li>
+                                            {% endifequal %}
+                                        {% else %}
+                                            <li class="none"><a href="">...</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% if styles.has_next %}
+                                        <li class="long"><a
+                                                href="?{{ styles.next_page_number.querystring }}">下一页</a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
 
                 </div>
             </div><!--End off row -->
-            <div class="pageturn">
-        <ul class="pagelist">
-            {% if styles.has_previous %}
-                <li class="long"><a
-                        href="?{{ styles.previous_page_number.querystring }}">上一页</a></li>
-            {% endif %}
-
-            {% for page in styles.pages %}
-                {% if page %}
-                    {% ifequal page styles.number %}
-                        <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a>
-                        </li>
-                    {% else %}
-                        <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a>
-                        </li>
-                    {% endifequal %}
-                {% else %}
-                    <li class="none"><a href="">...</a></li>
-                {% endif %}
-            {% endfor %}
-            {% if styles.has_next %}
-                <li class="long"><a
-                        href="?{{ styles.next_page_number.querystring }}">下一页</a>
-                </li>
-            {% endif %}
-        </ul>
-    </div>
         </div><!--End off container -->
     </section>
 

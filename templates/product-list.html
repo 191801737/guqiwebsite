@@ -45,39 +45,38 @@
                                     </div>
                                 {% endfor %}
                             </div>
+                            <div class="pageturn">
+                                <ul class="pagelist">
+                                    {% if categorys.has_previous %}
+                                        <li class="long"><a
+                                                href="?{{ categorys.previous_page_number.querystring }}">上一页</a></li>
+                                    {% endif %}
+
+                                    {% for page in categorys.pages %}
+                                        {% if page %}
+                                            {% ifequal page categorys.number %}
+                                                <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a>
+                                                </li>
+                                            {% else %}
+                                                <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a>
+                                                </li>
+                                            {% endifequal %}
+                                        {% else %}
+                                            <li class="none"><a href="">...</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% if categorys.has_next %}
+                                        <li class="long"><a
+                                                href="?{{ categorys.next_page_number.querystring }}">下一页</a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div><!--End off row -->
         </div><!--End off container -->
-        <div class="pageturn">
-            <ul class="pagelist">
-                {% if categorys.has_previous %}
-                    <li class="long"><a
-                            href="?{{ categorys.previous_page_number.querystring }}">上一页</a></li>
-                {% endif %}
-
-                {% for page in categorys.pages %}
-                    {% if page %}
-                        {% ifequal page categorys.number %}
-                            <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a>
-                            </li>
-                        {% else %}
-                            <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a>
-                            </li>
-                        {% endifequal %}
-                    {% else %}
-                        <li class="none"><a href="">...</a></li>
-                    {% endif %}
-                {% endfor %}
-                {% if categorys.has_next %}
-                    <li class="long"><a
-                            href="?{{ categorys.next_page_number.querystring }}">下一页</a>
-                    </li>
-                {% endif %}
-            </ul>
-        </div>
-
     </section>
 
 {% endblock %}
