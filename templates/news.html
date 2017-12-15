@@ -39,24 +39,13 @@
                         <div class="news-border">
                             <div class="news_content">
                                 <ul class="news-list">
-<<<<<<< HEAD
                                     {% for article in articles.object_list %}
-{#                                        <li class="news-item ">#}
-{#                                            <a href="{% url 'blog:news_detail' article.id %}">#}
-{#                                                <span style="float: left;display: inline-block">{{ article.title }}</span>#}
-{#                                                <span style="float: right;display: inline-block;color: #ccc;font-size: 12px">{{ article.pub_date }}</span>#}
-{#                                            </a>#}
-{##}
-{#                                        </li>#}
-=======
-                                         {% for article in articles.object_list %}
-                                          <li class="news-item ">
-                                                <a href="{% url 'blog:news_detail' article.id %}">
-                                                    <span style="float: left;display: inline-block">{{ article.title }}</span>
-                                                    <span style="float: right;display: inline-block;color: #ccc;font-size: 12px">{{ article.pub_date }}</span>
-                                                </a>
-                                          </li>
->>>>>>> 19a904816d22f1d37b53ed42625193b7e25fcf17
+                                        <li class="news-item ">
+                                            <a href="{% url 'blog:news_detail' article.id %}">
+                                                <span style="float: left;display: inline-block">{{ article.title }}</span>
+                                                <span style="float: right;display: inline-block;color: #ccc;font-size: 12px">{{ article.pub_date }}</span>
+                                            </a>
+                                        </li>
                                     {% endfor %}
                                 </ul>
                                 <div class="pageturn">
