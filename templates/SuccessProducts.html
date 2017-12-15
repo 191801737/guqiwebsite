@@ -13,17 +13,20 @@
                             <div class="row">
                                 {% for case in cases.object_list %}
                                     <div class="col-md-6 " style="padding:0;border: 1px solid #eee">
-                                        <div class="portfolio_item portfolio_item2">
+                                        <div class="portfolio_item portfolio_item2 ">
                                             <img src="{{ MEDIA_URL }}{{ case.image }}" alt=""/>
-                                            <div class="portfolio_text">
-                                                <h6 class="text-uppercase text-white">{{ case.title }}</h6>
-                                                <p class=" text-white">{{ case.desc }}</p>
-                                                <div class="portfolio_hover_icon">
-                                                    <a href="{% url 'blog:story_detail' case.id %}"><i
-                                                            class="fa fa-hand-pointer-o"></i></a>
-                                                    <a href="{{ MEDIA_URL }}{{ case.image }}" class="popup-img"><i
-                                                            class="fa fa-expand"></i></a>
+                                            <div class="portfolio_text ">
+                                                <div class="text-background">
+                                                    <h3 class="text-uppercase text-white">{{ case.title }}</h3>
+                                                    <p class=" text-white ">{{ case.desc }}</p>
+                                                    <div class="portfolio_hover_icon">
+                                                        <a href="{% url 'blog:story_detail' case.id %}"><i
+                                                                class="fa fa-hand-pointer-o"></i></a>
+                                                        <a href="{{ MEDIA_URL }}{{ case.image }}" class="popup-img"><i
+                                                                class="fa fa-expand"></i></a>
+                                                    </div>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
