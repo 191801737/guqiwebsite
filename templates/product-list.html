@@ -5,11 +5,13 @@
 {% block content %}
     <section id="hello" class="home bg-mega" style="margin-top: 0px;">
         <div class="row">
-            <div class="col-md-12">
-                <a href="#">
-                    <img src="/static/images/guqi/2-5.jpg" width="100%" style="max-height: 500px"/>
-                </a>
-            </div>
+            {% for productpicturebanner in productpicturebanners %}
+                <div class="col-md-12">
+                    <a href="#">
+                        <img src="{{ MEDIA_URL }}{{ productpicturebanner.image }}" width="100%" style="max-height: 500px"/>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
     </section>
     <section id="portfolio" class="portfolio ">
@@ -19,7 +21,7 @@
                      <div class="text-style">
                          <a class="btn btn-default" href="{% url 'products:product_list' %}">产品展示</a>>
                          <a href="{% url 'products:product_style' style.id %}" class="btn btn-default">产品样式</a>>
-                         <a href="#" class="btn btn-default">xxx</a>
+                         <a href="#" class="btn btn-default">{{ style.name }}</a>
                      </div>
                  </div>
             </div>

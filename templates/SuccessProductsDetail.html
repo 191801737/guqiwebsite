@@ -22,27 +22,19 @@
 {% block content %}
      <div class="text-title">
             成功案例详细介绍
-            <h1 style="color:#333">{{ article.title }}</h1>
-            <p style="font-size: 12px">{{ article.pub_date }}</p>
      </div>
     <div class="container" style="margin: -40px auto 40px;background-color: #fff;text-align: center">
         <div class="text-content" >
-
             {% autoescape off %}
                 <div class="">
-                 <h3>{{ article.content }}
-                    {{ article.content }}
-                    {{ article.content }}
-                    {{ article.content }}{{ article.content }}
-
+                 <h3>
+                     {{ contents.content }}
                  </h3>
                 </div>
             {% endautoescape %}
             <br/><br/>
         </div>
     </div>
-
-
 {% endblock %}
 
 {% block js %}

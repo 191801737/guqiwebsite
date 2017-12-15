@@ -5,6 +5,50 @@ import datetime
 # Create your models here.
 
 
+class ProductStyleBanner(models.Model):
+    """产品样式背景图"""
+    image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name='产品样式背景',
+                              default='image/default.png', null=True, blank=True)
+    url = models.URLField(max_length=200, verbose_name='访问地址', null=True, blank=True)
+    add_time = models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')
+
+    class Meta:
+        verbose_name = "产品样式背景"
+        verbose_name_plural = verbose_name
+
+    def save(self, *args, **kwargs):
+        # delete old file when replacing by updating the file
+        try:
+            this = ProductStyleBanner.objects.get(id=self.id)
+            if this.image != self.image:
+                this.image.delete(save=False)
+        except:
+            pass  # when new photo then we do nothing, normal case
+        super(ProductStyleBanner, self).save(*args, **kwargs)
+
+
+class ProductPictureBanner(models.Model):
+    """产品图片背景"""
+    image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name='产品图片背景',
+                              default='image/default.png', null=True, blank=True)
+    url = models.URLField(max_length=200, verbose_name='访问地址', null=True, blank=True)
+    add_time = models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')
+
+    class Meta:
+        verbose_name = "产品图片背景"
+        verbose_name_plural = verbose_name
+
+    def save(self, *args, **kwargs):
+        # delete old file when replacing by updating the file
+        try:
+            this = ProductPictureBanner.objects.get(id=self.id)
+            if this.image != self.image:
+                this.image.delete(save=False)
+        except:
+            pass  # when new photo then we do nothing, normal case
+        super(ProductPictureBanner, self).save(*args, **kwargs)
+
+
 class Product(models.Model):
     """产品"""
     name = models.CharField(max_length=50, verbose_name=u'产品名称')
@@ -51,7 +95,7 @@ class Style(models.Model):
         verbose_name_plural = verbose_name
 
     def get_style_picture(self):
-        # 获取样式的商品分类
+        # 获取样式的图片
         return self.picture_set.all()
 
     def __str__(self):
