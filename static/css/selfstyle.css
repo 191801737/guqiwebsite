@@ -100,6 +100,9 @@ li.long{
         color:#333;
         line-height: 25px;
 }
+.text-style{
+    margin-top: 20px;
+}
 .text-style a{
     color: #fff;
     font-size: 14px;
