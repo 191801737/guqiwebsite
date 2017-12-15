@@ -41,7 +41,7 @@
                         </div>
                         <div class="col-md-9" style="border: 1px solid #eee;padding: 10px">
                             <div class="row">
-                                {% for style in product.get_product_style %}
+                                {% for style in styles.object_list %}
                                 <div class="col-md-4 m-bottom-10">
                                     <div class="portfolio_item portfolio_item2">
                                         <img src="{{ MEDIA_URL }}{{ style.image }}" alt="" />

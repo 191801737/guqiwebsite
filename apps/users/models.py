@@ -10,7 +10,7 @@ class UserProfile(AbstractUser):
     gender = models.CharField(max_length=10, choices=(("male", u'男'), ('female', u'女')), default='female')
     address = models.CharField(max_length=100, default=u'')
     mobile = models.CharField(max_length=11, null=True, blank=True)
-    image = models.ImageField(max_length=100, upload_to='image/%Y/%m', verbose_name=u'头像', default=u'image/default.png')
+    image = models.ImageField(max_length=100, upload_to='image/%Y/%m', verbose_name=u'头像', default='image/default.png')
 
     class Meta:
         verbose_name = u'用户信息'
@@ -32,7 +32,7 @@ class UserProfile(AbstractUser):
 
 class IndexBanner(models.Model):
     """首页背景图"""
-    image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name=u'首页背景')
+    image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name=u'首页背景',default='image/default.png', null=True, blank=True)
     url = models.URLField(max_length=200, verbose_name=u'访问地址', null=True, blank=True)
     add_time = models.DateTimeField(default=datetime.datetime.now, verbose_name=u'添加时间')
 
@@ -54,7 +54,7 @@ class IndexBanner(models.Model):
 class ProductBanner(models.Model):
     """产品轮播图"""
     title = models.CharField(max_length=100, verbose_name='标题', null=True, blank=True)
-    image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name='产品轮播图')
+    image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name='产品轮播图',default='image/default.png', null=True, blank=True)
     url = models.URLField(max_length=200, verbose_name='访问地址')
     index = models.IntegerField(default=100, verbose_name='顺序', null=True, blank=True)
     add_time = models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')
@@ -80,7 +80,7 @@ class ProductBanner(models.Model):
 class CaseBanner(models.Model):
     """成功案例轮播图"""
     title = models.CharField(max_length=100, verbose_name='标题', null=True, blank=True)
-    image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name='案例轮播图')
+    image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name='案例轮播图', default='image/default.png', null=True, blank=True, )
     url = models.URLField(max_length=200, verbose_name='访问地址')
     index = models.IntegerField(default=100, verbose_name='顺序', null=True, blank=True)
     add_time = models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')

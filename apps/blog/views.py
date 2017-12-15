@@ -21,7 +21,7 @@ class ArticleView(View):
         # 获取新闻所有内容
         all_articles = Article.objects.all()
 
-        # 对课程进行分页
+        # 对新闻进行分页
         try:
             page = request.GET.get('page', 1)
         except PageNotAnInteger:
@@ -55,7 +55,7 @@ class CaseView(View):
         # 获取成功案例所有内容
         all_cases = Case.objects.all()
 
-        # 对课程进行分页
+        # 对成功案例进行分页
         try:
             page = request.GET.get('page', 1)
         except PageNotAnInteger:

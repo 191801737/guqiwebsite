@@ -47,20 +47,20 @@
                         </div>
                     </div>
                     <div class="col-md-9">
-                     <div class="news-border">
+                        <div class="news-border">
                             <div class="news_content">
                                 <ul class="news-list">
-                                         {% for article in articles.object_list %}
-                                          <li class="news-item ">
-                                                <a href="{% url 'blog:news_detail' article.id %}">
-                                                    <span style="float: left;display: inline-block">{{ article.title }}</span>
-                                                    <span style="float: right;display: inline-block;color: #ccc;font-size: 12px">{{ article.pub_date }}</span>
-                                                </a>
+                                    {% for article in articles.object_list %}
+                                        <li class="news-item ">
+                                            <a href="{% url 'blog:news_detail' article.id %}">
+                                                <span style="float: left;display: inline-block">{{ article.title }}</span>
+                                                <span style="float: right;display: inline-block;color: #ccc;font-size: 12px">{{ article.pub_date }}</span>
+                                            </a>
 
-                                          </li>
+                                        </li>
                                     {% endfor %}
                                 </ul>
-                            <div class="pageturn">
+                                <div class="pageturn">
                                     <ul class="pagelist">
                                         {% if articles.has_previous %}
                                             <li class="long"><a
@@ -70,16 +70,19 @@
                                         {% for page in articles.pages %}
                                             {% if page %}
                                                 {% ifequal page articles.number %}
-                                                    <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a></li>
+                                                    <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a>
+                                                    </li>
                                                 {% else %}
-                                                    <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a></li>
+                                                    <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a>
+                                                    </li>
                                                 {% endifequal %}
                                             {% else %}
                                                 <li class="none"><a href="">...</a></li>
                                             {% endif %}
                                         {% endfor %}
                                         {% if articles.has_next %}
-                                            <li class="long"><a href="?{{ articles.next_page_number.querystring }}">下一页</a>
+                                            <li class="long"><a
+                                                    href="?{{ articles.next_page_number.querystring }}">下一页</a>
                                             </li>
                                         {% endif %}
                                     </ul>
@@ -87,7 +90,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div><!--End off row-->
         </div><!--End off container -->
