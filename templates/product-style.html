@@ -18,7 +18,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9 col-md-offset-3">
-                    <div class="text-style" >
+                    <div class="text-style">
                         <a class="btn btn-default" href="{% url 'products:product_list' %}">产品展示</a>>
                         <a href="{% url 'products:product_style' product.id %}" class="btn btn-default">产品样式</a>
                     </div>
@@ -31,10 +31,42 @@
                             <div class="news_content">
                                 <p class="title">{{ product.name }}</p>
                                 <div class="separator_left"></div>
-                                <ul class="news-list ">
-                                    <li class="news-item active">
-                                        <i class="icofont icofont-plus-circle"></i>
-                                        <span class="">最热样式</span>
+                                <ul class="product-list ">
+                                    <li class="product-item ">
+                                        <a href="#">
+                                            <i class="icofont icofont-plus-circle"></i>
+                                            <span class="">新中式产品</span>
+                                        </a>
+                                    </li>
+                                    <li class="product-item ">
+                                        <a href="#">
+                                            <i class="icofont icofont-plus-circle"></i>
+                                            <span class="">古奇北欧产品</span>
+                                        </a>
+                                    </li>
+                                    <li class="product-item ">
+                                        <a href="#">
+                                            <i class="icofont icofont-plus-circle"></i>
+                                            <span class="">古奇宫廷产品</span>
+                                        </a>
+                                    </li>
+                                    <li class="product-item ">
+                                        <a href="#">
+                                            <i class="icofont icofont-plus-circle"></i>
+                                            <span class="">古奇欧美产品</span>
+                                        </a>
+                                    </li>
+                                    <li class="product-item ">
+                                        <a href="#">
+                                            <i class="icofont icofont-plus-circle"></i>
+                                            <span class="">法式珍珠白产品</span>
+                                        </a>
+                                    </li>
+                                    <li class="product-item ">
+                                        <a href="#">
+                                            <i class="icofont icofont-plus-circle"></i>
+                                            <span class="">高端轻奢产品</span>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -48,7 +80,7 @@
                                             <div class="portfolio_text">
                                                 <div class="text-background">
                                                     <h4 class="text-uppercase text-white ">{{ style.name }}</h4>
-{#                                                    <p class=" text-white ">Lorem ipsum dolor sit amet</p>#}
+                                                    {#                                                    <p class=" text-white ">Lorem ipsum dolor sit amet</p>#}
                                                     <div class="portfolio_hover_icon">
                                                         <a href="{% url 'products:product_picture' style.id %}"><i
                                                                 class="fa fa-hand-pointer-o"></i></a>
