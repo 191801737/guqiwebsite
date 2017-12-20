@@ -33,7 +33,12 @@
                                         <div id="slider" style="margin: 5% 5% ">
                                             <ul class="slides ">
                                                 {% for productbanner in productbanners %}
-                                                <li><a href="#"><img class="responsive" src="{{ MEDIA_URL }}{{ productbanner.image }}"></a></li>
+                                                    <li>
+                                                        <a href="{{ productbanner.url }}">
+                                                            <img class="responsive"
+                                                                 src="{{ MEDIA_URL }}{{ productbanner.image }}">
+                                                        </a>
+                                                    </li>
                                                 {% endfor %}
                                             </ul>
                                             <ul class="controls" >
@@ -51,10 +56,14 @@
                                         <h3 class="text-uppercase">成功案例</h3>
                                     </div>
                                     <div class="pricing_body bg-white ">
-                                        <div id="slide" class="slide"  class="index-slide" alt="star">
+                                        <div id="slide" class="slide" class="index-slide" alt="star">
                                             <!-- 轮播图片数量可自行增减 -->
                                             {% for casebanner in casebanners %}
-                                                <div class="img"><a href="#"><img src="{{ MEDIA_URL }}{{ casebanner.image }}"/></a></div>
+                                                <div class="img">
+                                                    <a href="{{ casebanner.url }}">
+                                                        <img src="{{ MEDIA_URL }}{{ casebanner.image }}"/>
+                                                    </a>
+                                                </div>
                                             {% endfor %}
                                             <div class="slide-bt"></div>
                                         </div>
