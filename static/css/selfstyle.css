@@ -39,14 +39,39 @@
 }
 .news_content .news-list li a{
     display: block;
-    color: #333333;
+    color: #333;
     padding: 0 10px;
     height: 100%;
 }
 .news_content .news-list li a:hover{
     color: #4bcf99;
 }
+/*product*/
+.news_content>.product-list>.product-item{
+    list-style: none;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px dashed #CDCDCD;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
 
+.news_content ul.product-list .active {
+    color: #4bcf99;
+}
+.news_content ul.product-list .product-item span{
+    margin-left: 10px ;
+    font-size: 15px;
+}
+.news_content ul.product-list li a{
+    display: inline-block;
+    color: #6a6a6a;
+    height: 100%;
+    width: 100%;
+}
+.news_content ul.product-list li>a:hover{
+    color: #4bcf99;
+}
 /*分页*/
  .pageturn{
     margin: 20px;

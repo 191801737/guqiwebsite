@@ -2,197 +2,216 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <title>古奇家具</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="/static/images/favicon.ico">
-        <!--Google Font link-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-        <link rel="stylesheet" href="/static/css/slick.css">
-        <link rel="stylesheet" href="/static/css/slick-theme.css">
-        <link rel="stylesheet" href="/static/css/animate.css">
-        <link rel="stylesheet" href="/static/css/fonticons.css">
-        <link rel="stylesheet" href="/static/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/static/css/bootstrap.css">
-        <link rel="stylesheet" href="/static/css/magnific-popup.css">
-        <link rel="stylesheet" href="/static/css/bootsnav.css">
-        <link rel="stylesheet" href="/static/css/selfstyle.css">
-        <link rel="stylesheet" href="/static/css/lunbotu.css">
-        {% block css %}
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>古奇家具</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/static/images/favicon.ico">
+    <!--Google Font link-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/slick.css">
+    <link rel="stylesheet" href="/static/css/slick-theme.css">
+    <link rel="stylesheet" href="/static/css/animate.css">
+    <link rel="stylesheet" href="/static/css/fonticons.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/magnific-popup.css">
+    <link rel="stylesheet" href="/static/css/bootsnav.css">
+    <link rel="stylesheet" href="/static/css/selfstyle.css">
+    <link rel="stylesheet" href="/static/css/lunbotu.css">
+    {% block css %}
 
-        {% endblock %}
-        <link rel="stylesheet" href="/static/css/style.css">
-        <!--Theme Responsive css-->
-        <link rel="stylesheet" href="/static/css/responsive.css" />
-        <style>
-            .language button{
+    {% endblock %}
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!--Theme Responsive css-->
+    <link rel="stylesheet" href="/static/css/responsive.css"/>
+    <style>
+        .language button {
 
-            }
-            #products li{
-                display: inline-block;
-                height: 50px;
-                line-height:50px;
-                margin: 0 10px;
-                color:#333;
-            }
-        </style>
-        <script src="/static/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
+        }
 
-    <body data-spy="scroll" data-target=".navbar-collapse" style="font-family: '微软雅黑';">
-        <!-- Preloader -->
-        <div id="loading">
-            <div id="loading-center">
-                <div id="loading-center-absolute">
-                    <div class="object" id="object_one"></div>
-                    <div class="object" id="object_two"></div>
-                    <div class="object" id="object_three"></div>
-                    <div class="object" id="object_four"></div>
+        #products li {
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            margin: 0 10px;
+            color: #333;
+        }
+    </style>
+    <script src="/static/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar-collapse" style="font-family: '微软雅黑';">
+<!-- Preloader -->
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="object_one"></div>
+            <div class="object" id="object_two"></div>
+            <div class="object" id="object_three"></div>
+            <div class="object" id="object_four"></div>
+        </div>
+    </div>
+</div><!--End off Preloader -->
+
+<div class="culmn">
+    <!--Home page style-->
+    <nav class="navbar navbar-default navbar-fixed white no-background bootsnav">
+        <!-- Start Top Search -->
+        <div class="top-search">
+            <div class="container">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                    <input type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
                 </div>
             </div>
-        </div><!--End off Preloader -->
-
-        <div class="culmn">
-            <!--Home page style-->
-            <nav class="navbar navbar-default navbar-fixed white no-background bootsnav">
-                <!-- Start Top Search -->
-                <div class="top-search">
-                    <div class="container">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                            <input type="text" class="form-control" placeholder="Search">
-                            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-                        </div>
-                    </div>
-              </div>
-                <!-- End Top Search -->
-
-                <div class="container">
-                    <div class="attr-nav">
-                        <ul>
-                            <li class="language"><button type="button" id="change" style="margin: 20px">English</button></li>
-                        </ul>
-                    </div>
-                    <!-- Start Header Navigation -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <a class="navbar-brand" href="#brand">
-                            <img src="/static/images/guqi/logo1.png" class="logo logo-display " alt="">
-                            <img src="/static/images/guqi/logo2.png" class="logo logo-scrolled m-top-8" alt="">
-                        </a>
-                    </div>
-                    <!-- End Header Navigation -->
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    {% block menu %}
-                        <div class="collapse navbar-collapse" id="navbar-menu">
-                            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                                <li {% if request.path == '/' %} class="active" {% endif %}><a href="{% url 'index' %}">首页</a></li>
-                                <li {% if request.path|slice:'15' == '/blog/introduce' %}class="active"{% endif %} ><a href="{% url 'blog:Introduce' %}">关于我们</a></li>
-                                <li {% if request.path|slice:'10' == '/blog/news' %}class="active"{% endif %} ><a href="{% url 'blog:news_list' %}">新闻中心</a></li>
-                                <li {% if request.path|slice:'8' == '/product' %}class="active"{% endif %} ><a href="{% url 'products:product_list' %}">产品展示</a></li>
-                                <li {% if request.path|slice:'11' == '/blog/story' %}class="active"{% endif %}><a href="{% url 'blog:story_list' %}">成功案例</a></li>
-                            </ul>
-                        </div><!-- /.navbar-collapse -->
-                    {% endblock %}
-
-                </div>
-            </nav>
-
-
-            <!--Home Sections-->
-
- <!--End off Home Sections-->
-            {% block content %}
-
-            {% endblock %}
-            <footer id="footer" class="footer bg-black">
-                    <div class="container">
-                        <div class="row">
-                            <div class="main_footer text-center p-top-40 p-bottom-30">
-                                <p class="wow fadeInRight" data-wow-duration="1s">
-                                    More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">古奇</a>-2017. All Rights Reserved
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
         </div>
+        <!-- End Top Search -->
 
-            <!-- JS includes -->
+        <div class="container">
+            <div class="attr-nav">
+                <ul>
+                    <li class="language">
+                        <button type="button" id="change" style="margin: 20px">English</button>
+                    </li>
+                </ul>
+            </div>
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#brand">
+                    <img src="/static/images/guqi/logo1.png" class="logo logo-display " alt="">
+                    <img src="/static/images/guqi/logo2.png" class="logo logo-scrolled m-top-8" alt="">
+                </a>
+            </div>
+            <!-- End Header Navigation -->
 
-            <script src="/static/js/vendor/jquery-1.11.2.min.js"></script>
-            <script src="/static/js/vendor/bootstrap.min.js"></script>
-            <script src="/static/js/jquery.magnific-popup.js"></script>
-            <script src="/static/js/jquery.easing.1.3.js"></script>
-            <script src="/static/js/slick.min.js"></script>
-            <script src="/static/js/jquery.collapse.js"></script>
-            <script src="/static/js/bootsnav.js"></script>
-
-            <!-- paradise slider js -->
-            <script src="/static/js/plugins.js"></script>
-            <script src="/static/js/main.js"></script>
-            {% block js %}
-
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            {% block menu %}
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li {% if request.path == '/' %} class="active" {% endif %}><a href="{% url 'index' %}">首页</a>
+                        </li>
+                        <li {% if request.path|slice:'15' == '/blog/introduce' %}class="active"{% endif %}><a
+                                href="{% url 'blog:Introduce' %}">关于我们</a></li>
+                        <li {% if request.path|slice:'10' == '/blog/news' %}class="active"{% endif %}><a
+                                href="{% url 'blog:news_list' %}">新闻中心</a></li>
+                        <li {% if request.path|slice:'8' == '/product' %}class="active"{% endif %}><a
+                                href="{% url 'products:product_list' %}">产品展示</a></li>
+                        <li {% if request.path|slice:'11' == '/blog/story' %}class="active"{% endif %}><a
+                                href="{% url 'blog:story_list' %}">成功案例</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
             {% endblock %}
-    <script>
-        $("#change").click(function(){
-            translate();
-        })
-        $(function(){
-              // do something
-            var script=document.createElement("script");
-            script.type="text/javascript";
-            script.src="http://www.microsoftTranslator.com/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**";
-            document.getElementsByTagName('head')[0].appendChild(script);
+
+        </div>
+    </nav>
 
 
-            var value = sessionStorage.getItem("language");
-            document.onreadystatechange = function () {
-                if (document.readyState == 'complete') {
-                    if(value==="1"){
-                        Microsoft.Translator.Widget.Translate('zh-CHS', 'en', onProgress, onError, onComplete, onRestoreOriginal, 2000);
-                    }
+    <!--Home Sections-->
+
+    <!--End off Home Sections-->
+    {% block content %}
+
+    {% endblock %}
+    <footer id="footer" class="footer bg-black">
+        <div class="container">
+            <div class="row">
+                <div class="main_footer text-center p-top-40 p-bottom-30">
+                    <p class="wow fadeInRight" data-wow-duration="1s">
+                       <a href="http://www.cssmoban.com/" target="_blank">古奇</a>-2017. All
+                        Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- JS includes -->
+
+<script src="/static/js/vendor/jquery-1.11.2.min.js"></script>
+<script src="/static/js/vendor/bootstrap.min.js"></script>
+<script src="/static/js/jquery.magnific-popup.js"></script>
+<script src="/static/js/jquery.easing.1.3.js"></script>
+<script src="/static/js/slick.min.js"></script>
+<script src="/static/js/jquery.collapse.js"></script>
+<script src="/static/js/bootsnav.js"></script>
+
+<!-- paradise slider js -->
+<script src="/static/js/plugins.js"></script>
+<script src="/static/js/main.js"></script>
+{% block js %}
+
+{% endblock %}
+<script>
+    $("#change").click(function () {
+        translate();
+    })
+    $(function () {
+        // do something
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "http://www.microsoftTranslator.com/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**";
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+
+        var value = sessionStorage.getItem("language");
+        document.onreadystatechange = function () {
+            if (document.readyState == 'complete') {
+                if (value === "1") {
+                    Microsoft.Translator.Widget.Translate('zh-CHS', 'en', onProgress, onError, onComplete, onRestoreOriginal, 2000);
                 }
             }
-            function onProgress(value) {
-            }
-            function onError(error) {
-            }
-            function onComplete() {
-                $("#WidgetFloaterPanels").hide();
-            }
-            function onRestoreOriginal() {
-            }
-        });
-
-        function translate(){
-            var value = sessionStorage.getItem("language");
-            if(value==="1"){
-                sessionStorage.setItem("language", "0");
-                $("#change").val("中文")
-            }else{
-                sessionStorage.setItem("language", "1");
-                $("#change").val("English")
-            }
-            window.location.reload();//刷新当前页面.
         }
-        $(function () {
-            $('.portfolio_text a>i.fa-hand-pointer-o').hover(function () {
-             $('.portfolio_text a>i.fa-hand-pointer-o').attr("title","进入")
-        })
-         $('.portfolio_text a>i.fa-expand').hover(function () {
-             $('.portfolio_text a>i.fa-expand').attr("title","放大")
-        })
-        })
+        function onProgress(value) {
+        }
 
-    </script>
-    </body>
+        function onError(error) {
+        }
+
+        function onComplete() {
+            $("#WidgetFloaterPanels").hide();
+        }
+
+        function onRestoreOriginal() {
+        }
+    });
+
+    function translate() {
+        var value = sessionStorage.getItem("language");
+        if (value === "1") {
+            sessionStorage.setItem("language", "0");
+            $("#change").val("中文")
+        } else {
+            sessionStorage.setItem("language", "1");
+            $("#change").val("English")
+        }
+        window.location.reload();//刷新当前页面.
+    }
+    $(function () {
+        $('.portfolio_text a>i.fa-hand-pointer-o').hover(function () {
+            $('.portfolio_text a>i.fa-hand-pointer-o').attr("title", "进入")
+        })
+        $('.portfolio_text a>i.fa-expand').hover(function () {
+            $('.portfolio_text a>i.fa-expand').attr("title", "放大")
+        });
+{#        $("img").lazyload({#}
+{##}
+{#            event: "scoll",//促发事件，默认scoll#}
+{##}
+{#            effect: "fadeIn" //加载图片使用的效果(淡入)#}
+{#        });#}
+    })
+
+</script>
+</body>
 </html>
