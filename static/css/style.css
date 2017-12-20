@@ -1163,11 +1163,11 @@ FAQ Page
 /*
 Video Section style
 ======================*/
-.video{
-    background: url(../images/background/video.jpg) no-repeat center center;
-    background-size: cover;
-    position: relative;
-}
+/*.video{*/
+    /*background: url(../images/background/video.jpg) no-repeat center center;*/
+    /*background-size: cover;*/
+    /*position: relative;*/
+/*}*/
 .main_video{
     display: block;
     /*z-index: 2;*/

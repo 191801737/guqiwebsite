@@ -3,3 +3,4 @@
 *.xml
 *.pyc
 guqiwebsite/settings.py
+guqiwebsite/media
