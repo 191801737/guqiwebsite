@@ -30,6 +30,9 @@ class ProductStyleView(View):
         # 获取背景图
         productstylebanners = ProductStyleBanner.objects.all()[:1]
 
+        # 获取所有产品
+        all_products = Product.objects.all()
+
         # 获取产品对应的样式
         product = Product.objects.get(id=int(product_id))
 

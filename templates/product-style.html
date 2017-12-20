@@ -32,42 +32,14 @@
                                 <p class="title">{{ product.name }}</p>
                                 <div class="separator_left"></div>
                                 <ul class="product-list ">
-                                    <li class="product-item ">
-                                        <a href="#">
-                                            <i class="icofont icofont-plus-circle"></i>
-                                            <span class="">新中式产品</span>
-                                        </a>
-                                    </li>
-                                    <li class="product-item ">
-                                        <a href="#">
-                                            <i class="icofont icofont-plus-circle"></i>
-                                            <span class="">古奇北欧产品</span>
-                                        </a>
-                                    </li>
-                                    <li class="product-item ">
-                                        <a href="#">
-                                            <i class="icofont icofont-plus-circle"></i>
-                                            <span class="">古奇宫廷产品</span>
-                                        </a>
-                                    </li>
-                                    <li class="product-item ">
-                                        <a href="#">
-                                            <i class="icofont icofont-plus-circle"></i>
-                                            <span class="">古奇欧美产品</span>
-                                        </a>
-                                    </li>
-                                    <li class="product-item ">
-                                        <a href="#">
-                                            <i class="icofont icofont-plus-circle"></i>
-                                            <span class="">法式珍珠白产品</span>
-                                        </a>
-                                    </li>
-                                    <li class="product-item ">
-                                        <a href="#">
-                                            <i class="icofont icofont-plus-circle"></i>
-                                            <span class="">高端轻奢产品</span>
-                                        </a>
-                                    </li>
+                                    {% for one_product in all_products %}
+                                        <li class="product-item ">
+                                            <a href="{% url 'products:product_style' one_product.id %}">
+                                                <i class="icofont icofont-plus-circle"></i>
+                                                <span class="">{{ one_product.name }}</span>
+                                            </a>
+                                        </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
