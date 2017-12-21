@@ -27,9 +27,6 @@ class ProductStyleView(View):
     """
     def get(self, request, product_id):
 
-        # 获取背景图
-        productstylebanners = ProductStyleBanner.objects.all()[:1]
-
         # 获取所有产品
         all_products = Product.objects.all()
 
@@ -81,9 +78,6 @@ class ProductPictureView(View):
     """商品图片"""
 
     def get(self, request, style_id):
-
-        # 获取背景图
-        productpicturebanners = ProductPictureBanner.objects.all()[:1]
 
         style = Style.objects.get(id=int(style_id))
 

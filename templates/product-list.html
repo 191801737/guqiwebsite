@@ -5,13 +5,11 @@
 {% block content %}
     <section id="hello" class="home bg-mega" style="margin-top: 0px;">
         <div class="row">
-            {% for productpicturebanner in productpicturebanners %}
                 <div class="col-md-12">
                     <a href="#">
-                        <img src="{{ MEDIA_URL }}{{ productpicturebanner.image }}" width="100%" style="max-height: 500px"/>
+                        <img src="{{ MEDIA_URL }}{{ style.product.bg_image }}" width="100%" style="max-height: 500px"/>
                     </a>
                 </div>
-            {% endfor %}
         </div>
     </section>
     <section id="portfolio" class="portfolio ">

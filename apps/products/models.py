@@ -6,7 +6,7 @@ import datetime
 
 
 class ProductStyleBanner(models.Model):
-    """产品样式背景图"""
+    """产品样式背景图  根据用户需求 未使用该代码"""
     image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name='产品样式背景',
                               default='image/default.png', null=True, blank=True)
     url = models.URLField(max_length=200, verbose_name='访问地址', null=True, blank=True)
@@ -28,7 +28,7 @@ class ProductStyleBanner(models.Model):
 
 
 class ProductPictureBanner(models.Model):
-    """产品图片背景"""
+    """产品图片背景 根据用户需求 未使用该代码"""
     image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name='产品图片背景',
                               default='image/default.png', null=True, blank=True)
     url = models.URLField(max_length=200, verbose_name='访问地址', null=True, blank=True)
@@ -55,6 +55,8 @@ class Product(models.Model):
     desc = models.CharField(max_length=300, verbose_name=u'产品描述')
     # detail = models.TextField(verbose_name=u'产品详情')
     image = models.ImageField(upload_to='product/%Y/%m', verbose_name=u'封面图片', max_length=100,
+                              default='image/default.png', null=True, blank=True)
+    bg_image = models.ImageField(upload_to='product/%Y/%m', verbose_name='样式背景图', max_length=100,
                               default='image/default.png', null=True, blank=True)
     # tag = models.CharField(default="", max_length=10, verbose_name="产品标签", null=True, blank=True)
     add_time = models.DateTimeField(default=datetime.datetime.now, verbose_name=u'添加时间')

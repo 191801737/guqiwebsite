@@ -6,21 +6,21 @@ import xadmin
 from .models import Product, Style, Picture, ProductStyleBanner, ProductPictureBanner
 
 
-class ProductStyleBannerAdmin(object):
-    list_display = ['image', 'url', 'add_time']
-    list_filter = ['image', 'url', 'add_time']
-    search_fields = ['image', 'url']
+# class ProductStyleBannerAdmin(object):
+#     list_display = ['image', 'url', 'add_time']
+#     list_filter = ['image', 'url', 'add_time']
+#     search_fields = ['image', 'url']
 
 
-class ProductPictureBannerAdmin(object):
-    list_display = ['image', 'url', 'add_time']
-    list_filter = ['image', 'url', 'add_time']
-    search_fields = ['image', 'url']
+# class ProductPictureBannerAdmin(object):
+#     list_display = ['image', 'url', 'add_time']
+#     list_filter = ['image', 'url', 'add_time']
+#     search_fields = ['image', 'url']
 
 
 class ProductAdmin(object):
-    list_display = ['name', 'desc', 'image', 'add_time']
-    list_filter = ['name', 'desc', 'image', 'add_time']
+    list_display = ['name', 'desc', 'image', 'bg_image', 'add_time']
+    list_filter = ['name', 'desc', 'image', 'bg_image', 'add_time']
     search_fields = ['name', 'desc']
 
 
@@ -46,8 +46,8 @@ xadmin.site.register(Product, ProductAdmin)
 xadmin.site.register(Style, StyleAdmin)
 # xadmin.site.register(Category, CategoryAdmin)
 xadmin.site.register(Picture, PictureAdmin)
-xadmin.site.register(ProductStyleBanner, ProductStyleBannerAdmin)
-xadmin.site.register(ProductPictureBanner, ProductPictureBannerAdmin)
+# xadmin.site.register(ProductStyleBanner, ProductStyleBannerAdmin)
+# xadmin.site.register(ProductPictureBanner, ProductPictureBannerAdmin)
 
 
 
