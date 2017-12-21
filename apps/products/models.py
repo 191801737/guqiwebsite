@@ -57,7 +57,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='product/%Y/%m', verbose_name=u'封面图片', max_length=100,
                               default='image/default.png', null=True, blank=True)
     bg_image = models.ImageField(upload_to='product/%Y/%m', verbose_name='样式背景图', max_length=100,
-                              default='image/default.png', null=True, blank=True)
+                                 default='image/default.png', null=True, blank=True)
     # tag = models.CharField(default="", max_length=10, verbose_name="产品标签", null=True, blank=True)
     add_time = models.DateTimeField(default=datetime.datetime.now, verbose_name=u'添加时间')
 
@@ -78,6 +78,8 @@ class Product(models.Model):
             this = Product.objects.get(id=self.id)
             if this.image != self.image:
                 this.image.delete(save=False)
+            if this.bg_image != self.bg_image:
+                this.bg_image.delete(save=False)
         except:
             pass  # when new photo then we do nothing, normal case
         super(Product, self).save(*args, **kwargs)
