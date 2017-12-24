@@ -5,13 +5,11 @@
 {% block content %}
     <section id="hello" class="home bg-mega" style="margin-top: 0px;">
         <div class="row">
-            {% for productstylebanner in productstylebanners %}
                 <div class="col-md-12">
                     <a href="#">
-                        <img class="lazy" data-original="{{ MEDIA_URL }}{{ product.image }}" src="" width="100%" style="max-height: 500px"/>
+                        <img class="lazy" data-original="{{ MEDIA_URL }}{{ product.bg_image }}" width="100%" style="max-height: 500px"/>
                     </a>
                 </div>
-            {% endfor %}
         </div>
     </section>
     <section id="portfolio" class="portfolio ">
@@ -32,42 +30,14 @@
                                 <p class="title">{{ product.name }}</p>
                                 <div class="separator_left"></div>
                                 <ul class="product-list ">
-                                    <li class="product-item ">
-                                        <a href="#">
-                                            <i class="icofont icofont-plus-circle"></i>
-                                            <span class="">新中式产品</span>
-                                        </a>
-                                    </li>
-                                    <li class="product-item ">
-                                        <a href="#">
-                                            <i class="icofont icofont-plus-circle"></i>
-                                            <span class="">古奇北欧产品</span>
-                                        </a>
-                                    </li>
-                                    <li class="product-item ">
-                                        <a href="#">
-                                            <i class="icofont icofont-plus-circle"></i>
-                                            <span class="">古奇宫廷产品</span>
-                                        </a>
-                                    </li>
-                                    <li class="product-item ">
-                                        <a href="#">
-                                            <i class="icofont icofont-plus-circle"></i>
-                                            <span class="">古奇欧美产品</span>
-                                        </a>
-                                    </li>
-                                    <li class="product-item ">
-                                        <a href="#">
-                                            <i class="icofont icofont-plus-circle"></i>
-                                            <span class="">法式珍珠白产品</span>
-                                        </a>
-                                    </li>
-                                    <li class="product-item ">
-                                        <a href="#">
-                                            <i class="icofont icofont-plus-circle"></i>
-                                            <span class="">高端轻奢产品</span>
-                                        </a>
-                                    </li>
+                                    {% for one_product in all_products %}
+                                        <li class="product-item ">
+                                            <a href="{% url 'products:product_style' one_product.id %}">
+                                                <i class="icofont icofont-plus-circle"></i>
+                                                <span class="">{{ one_product.name }}</span>
+                                            </a>
+                                        </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
