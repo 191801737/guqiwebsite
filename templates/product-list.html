@@ -8,7 +8,7 @@
             {% for productpicturebanner in productpicturebanners %}
                 <div class="col-md-12">
                     <a href="#">
-                        <img src="{{ MEDIA_URL }}{{ productpicturebanner.image }}" width="100%" style="max-height: 500px"/>
+                        <img class="lazy" data-original="{{ MEDIA_URL }}{{ productpicturebanner.image }}" src="" width="100%" style="max-height: 500px"/>
                     </a>
                 </div>
             {% endfor %}

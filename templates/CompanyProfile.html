@@ -9,7 +9,7 @@
         {% for introducebanner in introducebanners %}
             <div class="col-md-12">
                 <a href="#">
-                    <img src="{{ MEDIA_URL }}{{ introducebanner.image }}" width="100%" style="max-height: 500px"/>
+                    <img class="lazy" data-original="{{ MEDIA_URL }}{{ introducebanner.image }}" src="" width="100%" style="max-height: 500px"/>
                 </a>
             </div>
         {% endfor %}

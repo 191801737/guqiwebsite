@@ -138,7 +138,8 @@
 
 <!-- JS includes -->
 
-<script src="/static/js/vendor/jquery-1.11.2.min.js"></script>
+<script src="/static/js/jquery-1.11.0.min.js"></script>
+<script src="/static/js/jquery.lazyload.js?v=1.9.1"></script>
 <script src="/static/js/vendor/bootstrap.min.js"></script>
 <script src="/static/js/jquery.magnific-popup.js"></script>
 <script src="/static/js/jquery.easing.1.3.js"></script>
@@ -153,6 +154,16 @@
 
 {% endblock %}
 <script>
+    $(function () {
+        $(" img.lazy").lazyload({
+
+            event: "scoll",//促发事件，默认scoll
+
+            effect: "fadeIn", //加载图片使用的效果(淡入)
+
+            {#            threshold :180   //在图片距离屏幕180px时提前载入#}
+        });
+    })
     $("#change").click(function () {
         translate();
     })
@@ -204,12 +215,7 @@
         $('.portfolio_text a>i.fa-expand').hover(function () {
             $('.portfolio_text a>i.fa-expand').attr("title", "放大")
         });
-{#        $("img").lazyload({#}
-{##}
-{#            event: "scoll",//促发事件，默认scoll#}
-{##}
-{#            effect: "fadeIn" //加载图片使用的效果(淡入)#}
-{#        });#}
+
     })
 
 </script>
