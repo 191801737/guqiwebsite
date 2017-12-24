@@ -16,7 +16,7 @@
             {% for newsbanner in newsbanners %}
                 <div class="col-md-12">
                     <a href="#">
-                        <img class="lazy"  data-original="{{ MEDIA_URL }}{{ newsbanner.image }}" src="" width="100%" style="max-height: 500px"/>
+                        <img   src="{{ MEDIA_URL }}{{ newsbanner.image }}" width="100%" style="max-height: 500px"/>
                     </a>
                 </div>
             {% endfor %}
